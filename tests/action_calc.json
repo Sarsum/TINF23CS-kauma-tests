@@ -1,0 +1,97 @@
+{
+  "title": "Calc Action tests",
+  "description": "Test vectors for the kauma calc action, including invalid actions and formats for calc.",
+  "testcases": {
+    "test1": {
+      "action": "calc",
+      "arguments": {
+        "lhs": 123,
+        "op": "+",
+        "rhs": 234
+      }
+    },
+    "test2": {
+      "action": "calc",
+      "arguments": {
+        "lhs": 1234,
+        "op": "*",
+        "rhs": 333
+      }
+    },
+    "test3": {
+      "action": "calc",
+      "arguments": {
+        "lhs": 1000,
+        "op": "/",
+        "rhs": 3
+      }
+    },
+    "test4": {
+      "action": "calc",
+      "arguments": {
+        "lhs": "0x7fffffff",
+        "op": "+",
+        "rhs": 1
+      }
+    },
+    "test5": {
+      "action": "calc",
+      "arguments": {
+        "lhs": "-0xff",
+        "op": "*",
+        "rhs": 1000000
+      }
+    },
+    "test6": {
+      "action": "calc",
+      "arguments": {
+        "lhs": "-0xff",
+        "op": "*"
+      }
+    },
+    "test7": {
+      "action": "calc",
+      "arguments": {
+        "op": "*",
+        "rhs": 1000000
+      }
+    },
+    "test8": {
+      "action": "calc",
+      "arguments": {
+        "rhs": 1000000
+      }
+    },
+    "test9": {
+      "action": "clc",
+      "arguments": {
+        "lhs": 123,
+        "op": "+",
+        "rhs": 234
+      }
+    }
+  },
+  "expectedResult": {
+    "responses": {
+      "test1": {
+        "answer": 357
+      },
+      "test2": {
+        "answer": 410922
+      },
+      "test3": {
+        "answer": 333
+      },
+      "test4": {
+        "answer": "0x80000000"
+      },
+      "test5": {
+        "answer": -255000000
+      },
+      "test6": null,
+      "test7": null,
+      "test8": null,
+      "test9": null
+    }
+  }
+}
