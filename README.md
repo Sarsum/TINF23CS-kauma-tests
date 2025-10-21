@@ -40,7 +40,8 @@ This ensures consistency and compatibility across all users of this repository.
     },
     "expectedResult": {
         "responses": {
-            "testResponse": "value"
+            "test1": {...response object as expected for the action...},
+            "test2": null
         }
     }
 }

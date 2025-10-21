@@ -31,7 +31,9 @@
             "responses": {
                 "minProperties": 1,
                 "description": "Results of testcases. Sometimes for each testcase a result, sometimes one result computed by multiple actions.",
-                "additionalProperties": true
+                "additionalProperties": {
+                  "type": ["object", "null"]
+                }
             }
         },
         "required": ["responses"]
