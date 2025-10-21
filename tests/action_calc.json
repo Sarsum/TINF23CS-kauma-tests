@@ -76,11 +76,21 @@
   },
   "expectedResult": {
     "responses": {
-      "test1": 357,
-      "test2": 410922,
-      "test3": 333,
-      "test4": "0x80000000",
-      "test5": -255000000,
+      "test1": {
+        "answer": 357
+      },
+      "test2": {
+        "answer": 410922
+      },
+      "test3": {
+        "answer": 333
+      },
+      "test4": {
+        "answer": "0x80000000"
+      },
+      "test5": {
+        "answer": -255000000
+      },
       "test6": null,
       "test7": null,
       "test8": null,
