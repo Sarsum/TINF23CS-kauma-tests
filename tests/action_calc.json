@@ -1,9 +1,6 @@
 {
   "title": "Calc Action tests",
   "description": "Test vectors for the kauma calc action, including invalid actions and formats for calc.",
-  "authors": [
-    "User"
-  ],
   "testcases": {
     "test1": {
       "action": "calc",
