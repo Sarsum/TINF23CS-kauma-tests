@@ -71,27 +71,25 @@
       }
     }
   },
-  "expectedResult": {
-    "responses": {
-      "test1": {
-        "answer": 357
-      },
-      "test2": {
-        "answer": 410922
-      },
-      "test3": {
-        "answer": 333
-      },
-      "test4": {
-        "answer": "0x80000000"
-      },
-      "test5": {
-        "answer": -255000000
-      },
-      "test6": null,
-      "test7": null,
-      "test8": null,
-      "test9": null
-    }
+  "expectedResults": {
+    "test1": {
+      "answer": 357
+    },
+    "test2": {
+      "answer": 410922
+    },
+    "test3": {
+      "answer": 333
+    },
+    "test4": {
+      "answer": "0x80000000"
+    },
+    "test5": {
+      "answer": -255000000
+    },
+    "test6": null,
+    "test7": null,
+    "test8": null,
+    "test9": null
   }
 }

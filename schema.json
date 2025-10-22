@@ -24,9 +24,8 @@
         "required": ["action", "arguments"]
       }
     },
-    "expectedResult": {
+    "expectedResults": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
             "responses": {
                 "minProperties": 1,
@@ -35,9 +34,8 @@
                   "type": ["object", "null"]
                 }
             }
-        },
-        "required": ["responses"]
+        }
     }
   },
-  "required": ["title", "description", "testcases", "expectedResult"]
+  "required": ["title", "description", "testcases", "expectedResults"]
 }

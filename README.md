@@ -38,11 +38,9 @@ This ensures consistency and compatibility across all users of this repository.
             }
         }
     },
-    "expectedResult": {
-        "responses": {
-            "test1": {...response object as expected for the action...},
-            "test2": null
-        }
+    "expectedResults": {
+        "test1": {...response object as expected for the action...},
+        "test2": null
     }
 }
 ```
