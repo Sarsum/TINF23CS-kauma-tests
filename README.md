@@ -4,12 +4,26 @@ It serves as a central repository to share testcases across both courses.
 
 ## Structure
 ```
+├── tests/              # Directory containing all exercise test files (currently empty)
 ├── schema.json         # JSON schema defining the structure of all test files
-└── tests/              # Directory containing all exercise test files (currently empty)
+└── RunTests.py         # Python script to run the testcases againgst a local kauma executable
 ```
 * `schema.json` – Specifies the required structure, data types, and constraints for each test file.
 All test definitions must conform to this schema.
 * `tests/` – Contains JSON files with test data for individual exercises, typically named after their purpose.
+
+## Usage
+This repository provides a simple python script which runs the test files using the kauma script at the provided path:
+```
+python3 TINF23CS-kauma-tests/RunTests.py kauma-repository/kauma
+```
+The output is one line per test file containing:
+1. file name
+2. Count of successful exercises
+3. Count of failed exercises (not the expected result)
+4. Count of missing results (no result, even though one was expected)
+5. Array of the names of the failed exercises
+6. Array of the names of the missing exercises
 
 ## Test File Format
 Each test file must validate against the schema defined in `schema.json`.
@@ -52,7 +66,7 @@ Before submitting or committing new test files, ensure they pass validation agai
 Using Python (`jsonschema`):
 ```
 pip install jsonschema
-python -m jsonschema -i tests/exercise1.json schema.json
+python3 -m jsonschema -i tests/exercise1.json schema.json
 ```
 
 All test files must be valid before merging into the repository.
