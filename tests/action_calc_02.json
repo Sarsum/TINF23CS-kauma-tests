@@ -1,0 +1,174 @@
+{
+    "title": "Calc action test cases for the first exercise",
+    "description": "Test cases containing mixed hex and int values, division by zero and additional arguments",
+    "authors": [
+        "Linus Fricke"
+    ],
+    "testcases": {
+        "1": {
+            "action": "calc",
+            "arguments": {
+                "lhs": "-0xf09f92a9",
+                "op": "*",
+                "rhs": -1,
+                "additional": {}
+            }
+        },
+        "2": {
+            "action": "calc",
+            "arguments": {
+                "lhs": 9,
+                "op": "/",
+                "rhs": 3
+            }
+        },
+        "3": {
+            "action": "calc",
+            "arguments": {
+                "lhs": 9,
+                "op": "/",
+                "rhs": 2
+            }
+        },
+        "4": {
+            "action": "calc",
+            "arguments": {
+                "lhs": 5,
+                "op": "+",
+                "rhs": 7
+            }
+        },
+        "5": {
+            "action": "calc",
+            "arguments": {
+                "lhs": -3,
+                "op": "+",
+                "rhs": 10
+            }
+        },
+        "6": {
+            "action": "calc",
+            "arguments": {
+                "lhs": 15,
+                "op": "-",
+                "rhs": 8
+            }
+        },
+        "7": {
+            "action": "calc",
+            "arguments": {
+                "lhs": -10,
+                "op": "-",
+                "rhs": -5
+            }
+        },
+        "8": {
+            "action": "calc",
+            "arguments": {
+                "lhs": 4,
+                "op": "*",
+                "rhs": 6
+            }
+        },
+        "9": {
+            "action": "calc",
+            "arguments": {
+                "lhs": 0,
+                "op": "*",
+                "rhs": 9999
+            }
+        },
+        "10": {
+            "action": "calc",
+            "arguments": {
+                "lhs": 100,
+                "op": "/",
+                "rhs": 0
+            }
+        },
+        "11": {
+            "action": "calc",
+            "arguments": {
+                "lhs": 2147483647,
+                "op": "+",
+                "rhs": 1
+            }
+        },
+        "12": {
+            "action": "calc",
+            "arguments": {
+                "lhs": -2147483648,
+                "op": "-",
+                "rhs": 1
+            }
+        },
+        "13": {
+            "action": "calc",
+            "arguments": {
+                "lhs": "0x80000000",
+                "op": "+",
+                "rhs": 16
+            }
+        },
+        "14": {
+            "action": "calc",
+            "arguments": {
+                "lhs": "-0x80000001",
+                "op": "-",
+                "rhs": -1
+            }
+        },
+        "15": {
+            "action": "calc",
+            "arguments": {
+                "lhs": 123456,
+                "op": "*",
+                "rhs": 789
+            }
+        },
+        "16": {
+            "action": "calc",
+            "arguments": {
+                "lhs": -9999,
+                "op": "/",
+                "rhs": 3
+            }
+        },
+        "17": {
+            "action": "calc",
+            "arguments": {
+                "lhs": 42,
+                "op": "-",
+                "rhs": 0
+            }
+        },
+        "18": {
+            "action": "calc",
+            "arguments": {
+                "lhs": 0,
+                "op": "+",
+                "rhs": -999999
+            }
+        }
+    },
+    "expectedResults": {
+        "1": {"answer":"0xf09f92a9"},
+        "2": {"answer":3},
+        "3": {"answer":4},
+        "4": {"answer":12},
+        "5": {"answer":7},
+        "6": {"answer":7},
+        "7": {"answer":-5},
+        "8": {"answer":24},
+        "9": {"answer":0},
+        "10": null,
+        "11": {"answer":"0x80000000"},
+        "12": {"answer":"-0x80000001"},
+        "13": {"answer":"0x80000010"},
+        "14": {"answer":-2147483648},
+        "15": {"answer":97406784},
+        "16": {"answer":-3333},
+        "17": {"answer":42},
+        "18": {"answer":-999999}
+    }
+}
