@@ -24,17 +24,17 @@ def main():
                 testdata = json.load(file)
             start = datetime.datetime.now()
             proc = subprocess.Popen([work_dir / args.kauma, file_path],stdout=subprocess.PIPE)
-            while True:
-                line = proc.stdout.readline()
+            output = proc.stdout.read()
+            end = datetime.datetime.now()
+            for line in output.decode(encoding="UTF-8").split("\n"):
                 if not line:
-                    break
+                    continue
                 result = json.loads(line)
                 if result['reply'] == testdata['expectedResults'][result['id']]:
                     testresults[relative_path]['successful'] += [result['id']]
                 else:
                     testresults[relative_path]['failed'] += [result['id']]
                 testdata['expectedResults'].pop(result['id'])
-            end = datetime.datetime.now()
             testresults[relative_path]['timeMillis'] = (end - start).microseconds / 1000
             for k in testdata['expectedResults']:
                 if testdata['expectedResults'][k] == None:
