@@ -1,0 +1,47 @@
+{
+  "title": "Action: padding_oracle",
+  "description": "Tests for testing the padding_oracle action. As well as some current invalid actions.",
+  "testcases": {
+    "test1": {
+      "action": "padding_oracle",
+      "arguments": {
+        "hostname": "localhost",
+        "port": 18652,
+        "key_id": 1324,
+        "iv": "dx9PBs7v4YSycOTbTnp8QQ==",
+        "ciphertext": "3hUW5sEmIbldRORfj5l2jg=="
+      }
+    },
+    "test2": {
+      "action": "padding_oracle",
+      "arguments": {
+        "hostname": "localhost",
+        "port": 18652,
+        "key_id": 1234,
+        "iv": "obLD1OX2BxgpOEdWobLD1A==",
+        "ciphertext": "EFMvEYbUdZ49cd6wS8dqxZAY7Ix2HO6rYRupcF6qGzmk9HLAq1lIPi07UvEdwYHC"
+      }
+    },
+    "test3": {
+      "action": "padding_oracle",
+      "arguments": {
+        "hostname": "localhost",
+        "port": 18652,
+        "key_id": 1111,
+        "iv": "ESIzRFVmd4iZAKq7zN3u/w==",
+        "ciphertext": "+22EENNgvOX3ht/oYVu/Xg=="
+      }
+    }
+  },
+  "expectedResults": {
+    "test1": {
+      "plaintext": "VHQgbG9uZyBsdwYGBgYGBg=="
+    },
+    "test2": {
+      "plaintext": "SGVsbG8gV29ycnJycnJycnIgdGVzdCB0ZXN0IHRlc3QQEBAQEBAQEBAQEBAQEBAQ"
+    },
+    "test3": {
+      "plaintext": "U2hvcnQgbW1tBwcHBwcHBw=="
+    }
+  }
+}
