@@ -41,13 +41,26 @@ def main():
                     testresults[relative_path]['successful'] += [k]
                 else:
                     testresults[relative_path]['missing'] += [k]
-    result_table = [["Testfile", "Successfull (Count)", "Failed (Count)", "Missing (Count)",
-                     "Time Millis", "Failed (Tasks)", "Missing (Tasks)"]]
+    rows = []
     for k in testresults:
-        result_table += [[k, len(testresults[k]["successful"]), len(testresults[k]["failed"]),
-                       len(testresults[k]["missing"]), testresults[k]["timeMillis"], testresults[k]["failed"],
-                       testresults[k]["missing"]]]
-    for row in result_table:
-        print(",".join(str(x) for x in row))
+        rows += [[k, len(testresults[k]["successful"]), len(testresults[k]["failed"]),
+                       len(testresults[k]["missing"]), testresults[k]["timeMillis"], testresults[k]["failed"] 
+                       if len(testresults[k]["failed"]) != 0 else None, testresults[k]["missing"] if 
+                       len(testresults[k]["missing"]) != 0 else None ]]
+        
+    header = ["Testfile", "Successfull", "Failed (C)", "Missing (C)",
+                    "Time Millis", "Failed (T)", "Missing (T)"]
+    widths = [max(len(str(row[i])) for row in [header] + rows) for i in range(len(header))]
+
+    # Print header
+    print(" | ".join(str(header[i]).ljust(widths[i]) for i in range(len(header))))
+    print("-+-".join("-" * widths[i] for i in range(len(header))))
+
+    # Print rows
+    for row in rows:
+        print(" | ".join(str(row[i]).ljust(widths[i]) for i in range(len(row))))
+
+    print("\nC: Count\nT: Task")
+
 
 main()
