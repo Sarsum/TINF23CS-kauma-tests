@@ -69,6 +69,14 @@
         "op": "+",
         "rhs": 234
       }
+    },
+    "test10": {
+      "action": "clc",
+      "arguments": {
+        "lhs": 123,
+        "op": "/",
+        "rhs": 0
+      }
     }
   },
   "expectedResults": {
@@ -90,6 +98,7 @@
     "test6": null,
     "test7": null,
     "test8": null,
-    "test9": null
+    "test9": null,
+    "test10":null
   }
 }
