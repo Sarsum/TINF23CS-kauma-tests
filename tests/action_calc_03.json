@@ -1,5 +1,6 @@
 {
   "title": "Calc Action Testcases",
+  "description": "calc: integer representation and calculation (incl. division with negative operands)",
   "authors": ["tametsi"],
   "testcases": {
     "14MO7eegDIBbSA7BkfzmS": {
