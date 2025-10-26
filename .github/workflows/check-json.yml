@@ -4,11 +4,19 @@ on:
         paths:
             - 'tests/**/*.json'
 
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
-    test:
-        runs-on: ubuntu-latest
-        steps:
-          - name: Validate JSON testcase files against the JSON schema
-            uses: cardinalby/schema-validator-action@v3
-            with:
-                file: 'tests/**/*.json'
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: json-yaml-validate
+        id: json-yaml-validate
+        uses: GrantBirki/json-yaml-validate@v4.0.0
+        with:
+          comment: "true"
+          json_schema: schema.json
+          base_dir: "./tests/"
