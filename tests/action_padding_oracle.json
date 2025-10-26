@@ -1,6 +1,7 @@
 {
   "title": "Some padding oracle cases",
-  "description": "padding oracle",
+  "description": "Padding oracle test cases running on a hosted padding oracle server",
+  "authors": ["melo-afk"],
   "testcases": {
     "case9": {
       "action": "padding_oracle",
