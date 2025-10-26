@@ -1,0 +1,14 @@
+name: Check Testcase JSON schema on PRs
+on:
+    pull_request:
+        paths:
+            - 'tests/**/*.json'
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Validate JSON testcase files against the JSON schema
+            uses: cardinalby/schema-validator-action@v3
+            with:
+                file: 'tests/**/*.json'
