@@ -1,0 +1,119 @@
+{
+  "title": "Calc Action Testcases",
+  "description": "calc: integer representation and calculation (incl. division with negative operands)",
+  "authors": ["tametsi"],
+  "testcases": {
+    "14MO7eegDIBbSA7BkfzmS": {
+      "action": "calc",
+      "arguments": { "lhs": 1, "op": "-", "rhs": -1 }
+    },
+    "4fZ-9sJJjRpjh6Iz_N_8L": {
+      "action": "calc",
+      "arguments": { "lhs": "0x80000000", "op": "+", "rhs": 1 }
+    },
+    "5LvUQgK1YMAznbI1agqxI": {
+      "action": "calc",
+      "arguments": { "lhs": 0, "op": "+", "rhs": 1 }
+    },
+    "9TlMcvYf8w949yqKKWILj": {
+      "action": "calc",
+      "arguments": { "lhs": 4, "op": "/", "rhs": 3 }
+    },
+    "Cqf2kFNcP1XUfOKwdtv0N": {
+      "action": "calc",
+      "arguments": { "lhs": 2, "op": "/", "rhs": 2 }
+    },
+    "Dnh45DpUyJd4oqz5JDe33": {
+      "action": "calc",
+      "arguments": { "lhs": -8, "op": "/", "rhs": 6 }
+    },
+    "DwwpV44P8uV3Lb1kzVgjf": {
+      "action": "calc",
+      "arguments": { "lhs": 8, "op": "/", "rhs": -6 }
+    },
+    "GvEN-C7wrGRNz63QVdH0A": {
+      "action": "calc",
+      "arguments": { "lhs": 4, "op": "/", "rhs": -3 }
+    },
+    "L7UkyKbbRyTibLIXcslyk": {
+      "action": "calc",
+      "arguments": { "lhs": 2, "op": "/", "rhs": 4 }
+    },
+    "LDV2REgooPOaa9WAXcRa0": {
+      "action": "calc",
+      "arguments": { "lhs": 1, "op": "-", "rhs": 0 }
+    },
+    "LSTjTYQ50QL0i9Qfu6aDU": {
+      "action": "calc",
+      "arguments": { "lhs": -4, "op": "/", "rhs": 3 }
+    },
+    "SscAnwKh3A9TImFmmCSGd": {
+      "action": "calc",
+      "arguments": { "lhs": 8, "op": "/", "rhs": -5 }
+    },
+    "cBL1k8St7WDLcWh4GliNM": {
+      "action": "calc",
+      "arguments": { "lhs": -8, "op": "/", "rhs": 3 }
+    },
+    "g6EkwXyYULQpogPbLLaf1": {
+      "action": "calc",
+      "arguments": { "lhs": 1, "op": "*", "rhs": -2 }
+    },
+    "galkF_WnOScUpAqK9x-tF": {
+      "action": "calc",
+      "arguments": { "lhs": 8, "op": "/", "rhs": -4 }
+    },
+    "kzGBBUV4C4cHiUKhH1fqZ": {
+      "action": "calc",
+      "arguments": { "lhs": 8, "op": "/", "rhs": -3 }
+    },
+    "lb8w2MtK9iq5w7LH_RG9B": {
+      "action": "calc",
+      "arguments": { "lhs": 2, "op": "*", "rhs": 2 }
+    },
+    "m9Zk_83opJaQzStCX_yVz": {
+      "action": "calc",
+      "arguments": { "lhs": 1, "op": "+", "rhs": -1 }
+    },
+    "puoZ2MqyfLtZKXHRMZj03": {
+      "action": "calc",
+      "arguments": { "lhs": "0xf09f92a9", "op": "*", "rhs": 1 }
+    },
+    "r32Kp7qTuwoj0xQupP-rD": {
+      "action": "calc",
+      "arguments": { "lhs": 4, "op": "/", "rhs": 2 }
+    },
+    "vCY8Q2rqJ7wWm6FEipYdD": {
+      "action": "calc",
+      "arguments": { "lhs": 8, "op": "/", "rhs": 6 }
+    },
+    "zJ692rBGGcAYQeYx4rx3j": {
+      "action": "calc",
+      "arguments": { "lhs": -8, "op": "/", "rhs": 5 }
+    }
+  },
+  "expectedResults": {
+    "14MO7eegDIBbSA7BkfzmS": { "answer": 2 },
+    "4fZ-9sJJjRpjh6Iz_N_8L": { "answer": "0x80000001" },
+    "5LvUQgK1YMAznbI1agqxI": { "answer": 1 },
+    "9TlMcvYf8w949yqKKWILj": { "answer": 1 },
+    "Cqf2kFNcP1XUfOKwdtv0N": { "answer": 1 },
+    "Dnh45DpUyJd4oqz5JDe33": { "answer": -1 },
+    "DwwpV44P8uV3Lb1kzVgjf": { "answer": -1 },
+    "GvEN-C7wrGRNz63QVdH0A": { "answer": -1 },
+    "L7UkyKbbRyTibLIXcslyk": { "answer": 0 },
+    "LDV2REgooPOaa9WAXcRa0": { "answer": 1 },
+    "LSTjTYQ50QL0i9Qfu6aDU": { "answer": -1 },
+    "SscAnwKh3A9TImFmmCSGd": { "answer": -1 },
+    "cBL1k8St7WDLcWh4GliNM": { "answer": -2 },
+    "g6EkwXyYULQpogPbLLaf1": { "answer": -2 },
+    "galkF_WnOScUpAqK9x-tF": { "answer": -2 },
+    "kzGBBUV4C4cHiUKhH1fqZ": { "answer": -2 },
+    "lb8w2MtK9iq5w7LH_RG9B": { "answer": 4 },
+    "m9Zk_83opJaQzStCX_yVz": { "answer": 0 },
+    "puoZ2MqyfLtZKXHRMZj03": { "answer": "0xf09f92a9" },
+    "r32Kp7qTuwoj0xQupP-rD": { "answer": 2 },
+    "vCY8Q2rqJ7wWm6FEipYdD": { "answer": 1 },
+    "zJ692rBGGcAYQeYx4rx3j": { "answer": -1 }
+  }
+}
