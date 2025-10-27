@@ -1,7 +1,7 @@
 {
   "title": "Some padding oracle cases",
   "description": "Padding oracle test cases running on a hosted padding oracle server",
-  "authors": ["melo-afk"],
+  "authors": ["melo-afk", "niri81"],
   "testcases": {
     "case9": {
       "action": "padding_oracle",
@@ -102,6 +102,16 @@
         "iv": "HLfWD7uVBSkSrumLERmB4Q==",
         "ciphertext": "KlxGRFFRUaxtZDQKMQEKkndNwiWX2ajz76cRWzVAruM="
       }
+    },
+    "case10": {
+      "action": "padding_oracle",
+      "arguments": {
+        "hostname": "kauma.melo.run",
+        "port": 42424,
+        "key_id": 52533,
+        "iv": "oHsS7nnYMw8i3KqIzgfUww==",
+        "ciphertext": "1RbM4Z9tPkxM8On5N7UiBOHmcVVKtdmGtIRFmQnk114SIPLm3XXZrK4xR8B3cE0++CTju82swUWe1c764iFOLw=="
+      }
     }
   },
   "expectedResults": {
@@ -134,6 +144,9 @@
     },
     "case3": {
       "plaintext": "WW91IGtub3cgdGhlIHJ1bGVzIGFuZCBzbyBkbyBJAgI="
+    },
+    "case10": {
+      "plaintext": "TmV2ZXIgZ29ubmEgZ2l2ZSB5b3UgdXAsIG5ldmVyIGdvbm5hIGxldCB5b3UgZG93bg8PDw8PDw8PDw8PDw8PDw=="
     }
   }
 }
