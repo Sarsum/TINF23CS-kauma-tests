@@ -4,6 +4,7 @@
   "title": "Test Vectors",
   "description": "Test Vector including input and expected result to test the kauma application",
   "additionalProperties": false,
+  "type": "object",
   "properties": {
     "title": { "type": "string" },
     "description": { "type": "string" },
@@ -28,6 +29,7 @@
         "type": "object",
         "properties": {
             "responses": {
+                "type": "object",
                 "minProperties": 1,
                 "description": "Results of testcases. Sometimes for each testcase a result, sometimes one result computed by multiple actions.",
                 "additionalProperties": {
