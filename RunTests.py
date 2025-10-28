@@ -4,6 +4,7 @@ import json
 import os
 from pathlib import Path
 import subprocess
+import sys
 
 def main():
     parser = argparse.ArgumentParser(description="Helper script to run the tests of the testing repository")
@@ -16,6 +17,7 @@ def main():
     work_dir = Path(os.getcwd())
     tests_dir = base_dir / "tests"
     testresults = {}
+    failed_test = False
     for file_path in tests_dir.rglob("*"):
         if file_path.is_file():
             relative_path = file_path.relative_to(tests_dir).__str__()
@@ -34,6 +36,7 @@ def main():
                     testresults[relative_path]['successful'] += [result['id']]
                 else:
                     testresults[relative_path]['failed'] += [result['id']]
+                    failed_test = True
                 testdata['expectedResults'].pop(result['id'])
             testresults[relative_path]['timeMillis'] = (end - start).microseconds / 1000
             for k in testdata['expectedResults']:
@@ -41,6 +44,7 @@ def main():
                     testresults[relative_path]['successful'] += [k]
                 else:
                     testresults[relative_path]['missing'] += [k]
+                    failed_test = True
     rows = []
     for k in testresults:
         rows += [[k, len(testresults[k]["successful"]), len(testresults[k]["failed"]),
@@ -61,6 +65,7 @@ def main():
         print(" | ".join(str(row[i]).ljust(widths[i]) for i in range(len(row))))
 
     print("\nC: Count\nT: Task")
+    sys.exit(failed_test)
 
 
 main()
