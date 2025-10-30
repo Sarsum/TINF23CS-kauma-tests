@@ -1,0 +1,62 @@
+{
+    "title": "GF action test cases",
+    "description": "The galois field action examples from the exercise sheet",
+    "testcases": {
+        "default_gf_mul": {
+            "action": "gf_mul",
+            "arguments": {
+                "a": "oAAAAEAAAAAAAAAAAAAAAA==",
+                "b": "hAAAAAAAAAAAAAAAAAAAAA==",
+                "poly": "p1"
+            }
+        },
+        "default_gf_divmod": {
+            "action": "gf_divmod",
+            "arguments": {
+                "a": "oAAAAEAAAAAAAAAAAAAAAA==",
+                "b": "hAAAAAAAAAAAAAAAAAAAAA=="
+            }
+        },
+        "default_gf_inv": {
+            "action": "gf_inv",
+            "arguments": {
+                "x": "NeverGonnaGiveYouUp//w==",
+                "poly": "p1"
+            }
+        },
+        "default_gf_div": {
+            "action": "gf_div",
+            "arguments": {
+                "a": "///YOUTUBE///////AAAAA==",
+                "b": "///rS00xWnqwvI///AAAAA==",
+                "poly": "p1"
+            }
+        },
+        "default_gf_pow": {
+            "action": "gf_pow",
+            "arguments": {
+                "b": "hAAAAAAAAAAAAAAAAAAAAA==",
+                "e": 123456,
+                "poly": "p1"
+            }
+        },
+        "default_gf_sqrt": {
+            "action": "gf_sqrt",
+            "arguments": {
+                "x": "oAAAAEAAAAAAAAAAAAAAAA==",
+                "poly": "p2"
+            }
+        }
+    },
+    "expectedResults": {
+        "default_gf_mul": { "y": "pQAAAEIAAAAAAAAAAAAAAA==" },
+        "default_gf_divmod": {
+            "q": "EIQhCAAAAAAAAAAAAAAAAA==",
+            "r": "sAAAAAAAAAAAAAAAAAAAAA=="
+        },
+        "default_gf_inv": { "y": "NSrMarB2n+4IF8VXhrbSoQ==" },
+        "default_gf_div": { "q": "KB8FyvjLM0AKY+f8BPNAEQ==" },
+        "default_gf_pow": { "y": "Rp4NuH4f6V1sN4t51tkC7Q==" },
+        "default_gf_sqrt": { "y": "vODfOEm+Mm8LfMTfDg/zgw==" }
+    }
+}

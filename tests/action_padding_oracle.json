@@ -1,0 +1,152 @@
+{
+  "title": "Some padding oracle cases",
+  "description": "Padding oracle test cases running on a hosted padding oracle server",
+  "authors": ["melo-afk", "niri81"],
+  "testcases": {
+    "case9": {
+      "action": "padding_oracle",
+      "arguments": {
+        "hostname": "kauma.melo.run",
+        "port": 42424,
+        "key_id": 46142,
+        "iv": "ddCy7rA7gwwY5LKmv/NNeQ==",
+        "ciphertext": "3QjuQ6pka3xvh7Fj+SJEUq+bOGJny8M0xucUKSVaa9Q="
+      }
+    },
+    "case4": {
+      "action": "padding_oracle",
+      "arguments": {
+        "hostname": "kauma.melo.run",
+        "port": 42424,
+        "key_id": 47244,
+        "iv": "AAAAAAAAAAAAAAAAAAAAAA==",
+        "ciphertext": "GUwb/KeiSSdirCxg6Gq/zWBy6c/JiEM29qPRmQFKrzJkeF2qT8A5mnhyfM6pp1o31XsZzFHUrdlGH2vbxRbSYw=="
+      }
+    },
+    "case5": {
+      "action": "padding_oracle",
+      "arguments": {
+        "hostname": "kauma.melo.run",
+        "port": 42424,
+        "key_id": 46985,
+        "iv": "Okje73DhcO7pHuxb9eUsbA==",
+        "ciphertext": "BurVA/24D+bgj1nXzDAQQrH5S+jQ1AJeOwI+FrBW5kA="
+      }
+    },
+    "case0": {
+      "action": "padding_oracle",
+      "arguments": {
+        "hostname": "kauma.melo.run",
+        "port": 42424,
+        "key_id": 36269,
+        "iv": "AAAAAAAAAAAAAAAAAAAAAA==",
+        "ciphertext": "74g9WIEG3/sWtjF1VeUv4w=="
+      }
+    },
+    "case3": {
+      "action": "padding_oracle",
+      "arguments": {
+        "hostname": "kauma.melo.run",
+        "port": 42424,
+        "key_id": 17306,
+        "iv": "6uLkWl8Z8KfnXD4Rv2zEdg==",
+        "ciphertext": "LxORmpPdzXNA7q668R5ZrCXK71r0GSv/izlrgQUa62E="
+      }
+    },
+    "case6": {
+      "action": "padding_oracle",
+      "arguments": {
+        "hostname": "kauma.melo.run",
+        "port": 42424,
+        "key_id": 32928,
+        "iv": "AAAAAAAAAAAAAAAAAAAAAA==",
+        "ciphertext": "abdnrmU2/D/6axvrW5QLNH/qb1NaDwa/DzXf8ltVArQJZs972gdJDPxJHcscECAm"
+      }
+    },
+    "case2": {
+      "action": "padding_oracle",
+      "arguments": {
+        "hostname": "kauma.melo.run",
+        "port": 42424,
+        "key_id": 61992,
+        "iv": "AAAAAAAAAAAAAAAAAAAAAA==",
+        "ciphertext": "TD8BL1HiazPRWsUb4lFqKYBuajXFcU1Dpmsxub9/DnQ="
+      }
+    },
+    "case7": {
+      "action": "padding_oracle",
+      "arguments": {
+        "hostname": "kauma.melo.run",
+        "port": 42424,
+        "key_id": 10853,
+        "iv": "Cc5ybKcty92UgZs5964phg==",
+        "ciphertext": "zNPD/2iDlvGFHzspE6v5sw=="
+      }
+    },
+    "case8": {
+      "action": "padding_oracle",
+      "arguments": {
+        "hostname": "kauma.melo.run",
+        "port": 42424,
+        "key_id": 19682,
+        "iv": "AAAAAAAAAAAAAAAAAAAAAA==",
+        "ciphertext": "FzIDtvPqDm/S6MfyjooKlveCXiX3egEKuVLpMZUgfH8f9qxd0kMucbPfxOtbDFy+"
+      }
+    },
+    "case1": {
+      "action": "padding_oracle",
+      "arguments": {
+        "hostname": "kauma.melo.run",
+        "port": 42424,
+        "key_id": 3421,
+        "iv": "HLfWD7uVBSkSrumLERmB4Q==",
+        "ciphertext": "KlxGRFFRUaxtZDQKMQEKkndNwiWX2ajz76cRWzVAruM="
+      }
+    },
+    "case10": {
+      "action": "padding_oracle",
+      "arguments": {
+        "hostname": "kauma.melo.run",
+        "port": 42424,
+        "key_id": 52533,
+        "iv": "oHsS7nnYMw8i3KqIzgfUww==",
+        "ciphertext": "1RbM4Z9tPkxM8On5N7UiBOHmcVVKtdmGtIRFmQnk114SIPLm3XXZrK4xR8B3cE0++CTju82swUWe1c764iFOLw=="
+      }
+    }
+  },
+  "expectedResults": {
+    "case7": {
+      "plaintext": "dG8gbG92ZQkJCQkJCQkJCQ=="
+    },
+    "case9": {
+      "plaintext": "WW91IGtub3cgdGhlIHJ1bGVzIGFuZCBzbyBkbyBJAgI="
+    },
+    "case0": {
+      "plaintext": "dG8gbG92ZQAAAAAAAAACAQ=="
+    },
+    "case4": {
+      "plaintext": "TmV2ZXIgZ29ubmEgZ2kCASB5b3UgdXAsIG5ldmVyIGdvbm5hIGxldCB5b3UgZG93bgAAAAAAAAAAAAAAAAAAAQ=="
+    },
+    "case1": {
+      "plaintext": "WW91IGtub3cgdGhlIHJ1bGVzIGFuZCBzbyBkbyBJAgI="
+    },
+    "case6": {
+      "plaintext": "TmV2ZXIgZ29ubmEgcnUCAWFyb3VuZCBhbmQgZGVzZXJ0IHlvdQAAAAAAAAAAAAAB"
+    },
+    "case5": {
+      "plaintext": "V2UncmUgbm8gc3RyYW5nZXJzDg4ODg4ODg4ODg4ODg4="
+    },
+    "case8": {
+      "plaintext": "WW91IHdvdWxkbid0IGcCASB0aGlzIGZyb20gYW55IG90aGVyIGd1eQAAAAAAAAAB"
+    },
+    "case2": {
+      "plaintext": "V2UncmUgbm8gc3RyYW4CAXJzAAAAAAAAAAAAAAAAAAE="
+    },
+    "case3": {
+      "plaintext": "WW91IGtub3cgdGhlIHJ1bGVzIGFuZCBzbyBkbyBJAgI="
+    },
+    "case10": {
+      "plaintext": "TmV2ZXIgZ29ubmEgZ2l2ZSB5b3UgdXAsIG5ldmVyIGdvbm5hIGxldCB5b3UgZG93bg8PDw8PDw8PDw8PDw8PDw=="
+    }
+  }
+}

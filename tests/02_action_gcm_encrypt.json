@@ -1,0 +1,24 @@
+{
+    "title": "AES GCM encryption test case",
+    "description": "Default AES GCM encryption test case from exercise sheet",
+    "testcases": {
+        "default_gcm_encrypt": {
+            "action": "gcm_encrypt",
+            "arguments": {
+                "poly": "p1",
+                "nonce": "4gF+BtR3ku/PUQci",
+                "key": "Xjq/GkpTSWoe3ZH0F+tjrQ==",
+                "plaintext": "RGFzIGlzdCBlaW4gVGVzdA==",
+                "ad": "QUQtRGF0ZW4="
+            }
+        }
+    },
+    "expectedResults": {
+        "default_gcm_encrypt": {
+            "ciphertext": "ET3RmvH/Hbuxba63EuPRrw==",
+            "tag": "Mp0APJb/ZIURRwQlMgNN/w==",
+            "L": "AAAAAAAAAEAAAAAAAAAAgA==",
+            "H": "Bu6ywbsUKlpmZXMQyuGAng=="
+        }
+    }
+}
