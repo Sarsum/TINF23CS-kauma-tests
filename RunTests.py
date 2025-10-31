@@ -9,6 +9,7 @@ import sys
 def main():
     parser = argparse.ArgumentParser(description="Helper script to run the tests of the testing repository")
     parser.add_argument("kauma", help="Path to the kauma executable")
+    parser.add_argument("--ignore-test-failures", action='store_true', help="Does not exit with an error when tests fail")
     args = parser.parse_args()
 
     print(args.kauma)
@@ -65,7 +66,9 @@ def main():
         print(" | ".join(str(row[i]).ljust(widths[i]) for i in range(len(row))))
 
     print("\nC: Count\nT: Task")
-    sys.exit(failed_test)
+
+    if not args.ignore_test_failures:
+        sys.exit(failed_test)
 
 
 main()
