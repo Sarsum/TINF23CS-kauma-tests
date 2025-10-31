@@ -1,0 +1,52 @@
+{
+    "title": "GF action custom testcases",
+    "description": "Basic GF operations to test functionality",
+    "testcases": {
+        "case1": {
+            "action": "gf_mul",
+            "arguments": {
+                "a": "AAAAAAAAAAAAAAAAAAAAAA==",
+                "b": "AAAAAAAAAAAAAAAAAAAAAA==",
+                "poly": "p1"
+            }
+        },
+        "case2": {
+            "action": "gf_mul",
+            "arguments": {
+                "a": "hAAAAEAAAAAAAAAAAAAAAA==",
+                "b": "AAAAAAAAAAAAAAAAAAAAAA==",
+                "poly": "p1"
+            }
+        },
+        "case3": {
+          "action": "gf_mul",
+          "arguments": {
+                "a": "hAAAAEAAAAAAAAAAAAAAAA==",
+                "b": "AAAAAAAAAAAAAAAAAAAAAQ==",
+                "poly": "p1"
+            }
+        },
+        "case4": {
+            "action": "gf_mul",
+            "arguments": {
+                "a": "QAAAAEAAAAAAAAAAAAAAAA==",
+                "b": "QAAAAAAAAAAAAAAAAAAAAA==",
+                "poly": "p1"
+          }
+        }
+    },
+    "expectedResults": {
+        "case1": {
+          "y": "AAAAAAAAAAAAAAAAAAAAAA=="
+        },
+        "case2": {
+          "y": "AAAAAAAAAAAAAAAAAAAAAA=="
+        },
+        "case3": {
+          "y": "DhAAAOEAAAAAAAAAAAAAAQ=="
+        },
+        "case4": {
+          "y": "IAAAACAAAAAAAAAAAAAAAA=="
+        }
+    }
+}
