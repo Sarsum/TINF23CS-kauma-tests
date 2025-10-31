@@ -39,7 +39,7 @@ def main():
                     testresults[relative_path]['failed'] += [result['id']]
                     failed_test = True
                 testdata['expectedResults'].pop(result['id'])
-            testresults[relative_path]['timeMillis'] = (end - start).microseconds / 1000
+            testresults[relative_path]['timeSeconds'] = f"{(end - start).total_seconds():.3f}"
             for k in testdata['expectedResults']:
                 if testdata['expectedResults'][k] is None:
                     testresults[relative_path]['successful'] += [k]
@@ -48,12 +48,12 @@ def main():
     rows = []
     for k in testresults:
         rows += [[k, len(testresults[k]["successful"]), len(testresults[k]["failed"]),
-                       len(testresults[k]["missing"]), testresults[k]["timeMillis"], testresults[k]["failed"] 
-                       if len(testresults[k]["failed"]) != 0 else None, testresults[k]["missing"] if 
+                       len(testresults[k]["missing"]), testresults[k]["timeSeconds"], testresults[k]["failed"][:4] 
+                       if len(testresults[k]["failed"]) != 0 else None, testresults[k]["missing"][:4] if 
                        len(testresults[k]["missing"]) != 0 else None ]]
         
     header = ["Testfile", "Successful", "Failed (C)", "Missing (C)",
-                    "Time Millis", "Failed (T)", "Missing (T)"]
+                    "Time Seconds", "Failed (T)", "Missing (T)"]
     widths = [max(len(str(row[i])) for row in [header] + rows) for i in range(len(header))]
 
     # Print header
