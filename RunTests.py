@@ -53,7 +53,7 @@ def main():
                        if len(testresults[k]["failed"]) != 0 else None, testresults[k]["missing"] if 
                        len(testresults[k]["missing"]) != 0 else None ]]
         
-    header = ["Testfile", "Successfull", "Failed (C)", "Missing (C)",
+    header = ["Testfile", "Successful", "Failed (C)", "Missing (C)",
                     "Time Millis", "Failed (T)", "Missing (T)"]
     widths = [max(len(str(row[i])) for row in [header] + rows) for i in range(len(header))]
 
