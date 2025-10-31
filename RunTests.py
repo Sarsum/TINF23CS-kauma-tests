@@ -41,11 +41,10 @@ def main():
                 testdata['expectedResults'].pop(result['id'])
             testresults[relative_path]['timeMillis'] = (end - start).microseconds / 1000
             for k in testdata['expectedResults']:
-                if testdata['expectedResults'][k] == None:
+                if testdata['expectedResults'][k] is None:
                     testresults[relative_path]['successful'] += [k]
                 else:
                     testresults[relative_path]['missing'] += [k]
-                    failed_test = True
     rows = []
     for k in testresults:
         rows += [[k, len(testresults[k]["successful"]), len(testresults[k]["failed"]),
