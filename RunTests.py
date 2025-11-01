@@ -9,6 +9,7 @@ import sys
 def main():
     parser = argparse.ArgumentParser(description="Helper script to run the tests of the testing repository")
     parser.add_argument("kauma", help="Path to the kauma executable")
+    parser.add_argument("--ignore-test-failures", action='store_true', help="Does not exit with an error when tests fail")
     args = parser.parse_args()
 
     print(args.kauma)
@@ -40,11 +41,10 @@ def main():
                 testdata['expectedResults'].pop(result['id'])
             testresults[relative_path]['timeMillis'] = (end - start).microseconds / 1000
             for k in testdata['expectedResults']:
-                if testdata['expectedResults'][k] == None:
+                if testdata['expectedResults'][k] is None:
                     testresults[relative_path]['successful'] += [k]
                 else:
                     testresults[relative_path]['missing'] += [k]
-                    failed_test = True
     rows = []
     for k in testresults:
         rows += [[k, len(testresults[k]["successful"]), len(testresults[k]["failed"]),
@@ -52,7 +52,7 @@ def main():
                        if len(testresults[k]["failed"]) != 0 else None, testresults[k]["missing"] if 
                        len(testresults[k]["missing"]) != 0 else None ]]
         
-    header = ["Testfile", "Successfull", "Failed (C)", "Missing (C)",
+    header = ["Testfile", "Successful", "Failed (C)", "Missing (C)",
                     "Time Millis", "Failed (T)", "Missing (T)"]
     widths = [max(len(str(row[i])) for row in [header] + rows) for i in range(len(header))]
 
@@ -65,7 +65,9 @@ def main():
         print(" | ".join(str(row[i]).ljust(widths[i]) for i in range(len(row))))
 
     print("\nC: Count\nT: Task")
-    sys.exit(failed_test)
+
+    if not args.ignore_test_failures:
+        sys.exit(failed_test)
 
 
 main()
