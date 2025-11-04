@@ -25,6 +25,43 @@ The output is one line per test file containing:
 5. Array of the names of the failed exercises
 6. Array of the names of the missing exercises
 
+## Test Script
+`RunTests.py` is a helper script that automates running all JSON test files in the `tests/` directory against a given local `kauma` executable.
+
+### Basic Usage
+```
+python3 RunTests.py path/to/kauma
+```
+This command will:
+* Discover all .json test files in the tests/ directory (recursively)
+* Run each test file using the provided kauma binary
+* Print a concise summary per file (successes, failures, missing results)
+
+### Command-Line Options
+| Option | Description |
+| -------- | ------- |
+| `--ignore-test-failures` | Continue running even if some tests fail (exit code 0). |
+| `-f`, `--filter <substring>` | Run only tests whose filename contains the given substring. Can be used multiple times to match any of several filters. |
+| `-s`, `--sidecar <name>` | Declare an available sidecar. Tests that list `requiredSidecars` in their JSON will only run if all of them are provided via `-s`. Can be used multiple times. |
+
+### Examples
+Run all tests which work out of the box in any (to the internet connected) environment:
+```
+python3 RunTests.py ./path/to/kauma
+```
+Run only tests containing "02_action" in their filename:
+```
+python3 RunTests.py ./path/to/kauma -f 02_action
+```
+Run all out-of-the-box tests as well as the ones requiring specific sidecars:
+```
+python3 RunTests.py ./path/to/kauma -s optionally -s required-sidecar
+```
+Combine filters and sidecar:
+```
+python3 RunTests.py ./path/to/kauma -f padding -s padding-oracle-server
+```
+
 ## Test File Format
 Each test file must validate against the schema defined in `schema.json`.
 This ensures consistency and compatibility across all users of this repository.
@@ -35,6 +72,7 @@ This ensures consistency and compatibility across all users of this repository.
     "title": "Some title",
     "description": "Description of the tests",
     "authors": ["optionally", "authors"],
+    "requiredSidecars": ["optionally", "required-sidecar"],
     "testcases": {
         "test1": {
             "action": "action1",
@@ -59,6 +97,20 @@ This ensures consistency and compatibility across all users of this repository.
 }
 ```
 > For the full specification, see `schema.json`
+
+### `requiredSidecars` Field
+A test file may optionally declare dependencies on external components (sidecars) using a top-level "requiredSidecars" field:
+```json
+"requiredSidecars": ["optionally", "padding-oracle-server"]
+```
+The test will only be executed if all listed sidecars are specified on the command line:
+```
+python3 RunTests.py ./path/to/kauma -s optionally -s padding-oracle-server
+```
+Otherwise, the test will be skipped with a message such as:
+```
+Skipping tests/padding/test01.json (missing required sidecars: ['optionally'])
+```
 
 ## Validation
 Before submitting or committing new test files, ensure they pass validation against the schema.

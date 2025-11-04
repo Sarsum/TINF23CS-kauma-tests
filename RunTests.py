@@ -13,6 +13,9 @@ def main():
     parser.add_argument("-f", "--filter", action="append", dest="filters",
                         help="Optional substring filter for test names. Can be used multiple times. "
                              "Only tests whose relative path contains any given filter will be run.")
+    parser.add_argument("-s", "--sidecar", action="append", dest="sidecars",
+                        help="Specify available sidecars. Tests requiring others will be skipped. "
+                             "Can be used multiple times, e.g. -s crypto -s network")
     args = parser.parse_args()
 
     print(args.kauma)
@@ -26,6 +29,9 @@ def main():
     # Keep track whether any test matched the filters (used for warning after for loop)
     any_matched = False
 
+    # Normalize sidecar list (handle None if no -s given)
+    available_sidecars = args.sidecars or []
+
     for file_path in tests_dir.rglob("*"):
         if file_path.is_file():
             relative_path = file_path.relative_to(tests_dir).__str__()
@@ -38,9 +44,18 @@ def main():
                     continue
                 any_matched = True
 
-            testresults[relative_path] = {"successful": [], "failed": [], "missing": []}
             with open(file_path, 'r') as file:
                 testdata = json.load(file)
+
+            required_sidecars = testdata.get("requiredSidecars", [])
+            if required_sidecars:
+                missing = [s for s in required_sidecars if s not in available_sidecars]
+                if missing:
+                    print(f"Skipping {relative_path} (missing required sidecars: {missing})")
+                    continue
+            
+            testresults[relative_path] = {"successful": [], "failed": [], "missing": []}
+
             start = datetime.datetime.now()
             proc = subprocess.Popen([work_dir / args.kauma, file_path],stdout=subprocess.PIPE)
             output = proc.stdout.read()
