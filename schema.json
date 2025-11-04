@@ -9,6 +9,7 @@
     "title": { "type": "string" },
     "description": { "type": "string" },
     "authors": { "type": "array", "items": { "type": "string" } },
+    "requiredSidecars": { "type": "array", "items": { "type": "string" } },
     "testcases": {
       "type": "object",
       "minProperties": 1,
