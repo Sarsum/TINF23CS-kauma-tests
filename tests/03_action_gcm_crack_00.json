@@ -1,0 +1,39 @@
+{
+  "title": "GCM crack test case",
+  "description": "The gcm crack action example from the exercise sheet",
+  "testcases": {
+    "default_gcm_crack": {
+      "action": "gcm_crack",
+      "arguments": {
+        "nonce": "4gF+BtR3ku/PUQci",
+        "m1": {
+          "ciphertext": "CGOkZDnJEt24aVV8mqQq+P4pouVDWhAYj0SN5MDAgg==",
+          "associated_data": "TmFjaHJpY2h0IDE=",
+          "tag": "GC9neV3aZLnmznTIWqCC4A=="
+        },
+        "m2": {
+          "ciphertext": "FnWyLSTfRrO8Y1MuhLIs6A==",
+          "associated_data": "",
+          "tag": "gb2ph1vzwU85/FsUg51t3Q=="
+        },
+        "m3": {
+          "ciphertext": "CGOkZDnJEt25aV58iaMt6O8+8chKVh0Eg1XFxA==",
+          "associated_data": "TmFjaHJpY2h0IDM=",
+          "tag": "+/aDjsAzTseDLuM4jt5Q6Q=="
+        },
+        "forgery": {
+          "ciphertext": "AXe/ZQ==",
+          "associated_data": ""
+        },
+        "poly": "p1"
+      }
+    }
+  },
+  "expectedResults": {
+    "default_gcm_crack": {
+      "tag": "Y16EEEO1sgJX3IsJSwEXlA==",
+      "H": "Nxn7h7ruk8eiNAG6AfhUFg==",
+      "mask": "tXjFK5vCqIPl6fKAJAyy9A=="
+    }
+  }
+}
