@@ -5,6 +5,7 @@ import os
 from pathlib import Path
 import subprocess
 import sys
+import tempfile # Added for temporary file creation
 
 def main():
     parser = argparse.ArgumentParser(description="Helper script to run the tests of the testing repository")
@@ -20,6 +21,9 @@ def main():
                         help="Path to a text file blacklist. Tests with relative paths "
                              "matching any line in this file will be skipped. "
                              "Paths should use forward slashes (/) as separators.")
+    parser.add_argument("--delimiter", dest="testcase_limit", type=int,
+                        help="Limit the number of test cases to run from each file. "
+                             "Runs only the first N test cases found in the file.")
     args = parser.parse_args()
 
     # --- Loading Screen (prints to stderr) ---
@@ -29,7 +33,6 @@ def main():
         print(f"Applying filters: {args.filters}", file=sys.stderr)
     if args.sidecars:
         print(f"Available sidecars: {args.sidecars}", file=sys.stderr)
-    
     
     python_blacklist_set = set()
     if args.python_blacklist:
@@ -45,9 +48,11 @@ def main():
         except FileNotFoundError:
             print(f"Error: Blacklist file not found: {blacklist_path}", file=sys.stderr)
             sys.exit(1)
-    
+
+    if args.testcase_limit:
+        print(f"Applying test case limit (delimiter): {args.testcase_limit}", file=sys.stderr)
+
     print("--------------------------------------", file=sys.stderr)
-    # --- End Loading Screen ---
 
     base_dir = Path(__file__).resolve().parent
     work_dir = Path(os.getcwd())
@@ -55,30 +60,22 @@ def main():
     testresults = {}
     failed_test = False
 
-    # Keep track whether any test matched the filters (used for warning after for loop)
     any_matched = False
-
-    # Normalize sidecar list (handle None if no -s given)
     available_sidecars = args.sidecars or []
 
     print(f"Scanning for tests in {tests_dir}...", file=sys.stderr)
 
     for file_path in tests_dir.rglob("*"):
         if file_path.is_file():
-            # Get the relative path and normalize to POSIX format (/)
-            # This ensures consistent matching with the blacklist
             relative_path = file_path.relative_to(tests_dir).as_posix()
 
-            # --- NEW: Python Blacklist Check ---
             if relative_path in python_blacklist_set:
                 print(f"Skipping {relative_path} (in python blacklist)", file=sys.stderr)
                 continue
 
-            # If filters provided, only run files whose relative path contains at least one filter substring
             if args.filters:
                 matched = any(filt in relative_path for filt in args.filters)
                 if not matched:
-                    # Log skips to stderr
                     print(f"Skipping {relative_path} (does not match filters: {args.filters})", file=sys.stderr)
                     continue
                 any_matched = True
@@ -94,26 +91,65 @@ def main():
             if required_sidecars:
                 missing = [s for s in required_sidecars if s not in available_sidecars]
                 if missing:
-                    # Log skips to stderr
                     print(f"Skipping {relative_path} (missing required sidecars: {missing})", file=sys.stderr)
                     continue
             
+            # --- NEW: Delimiter/Limit Logic ---
+            file_path_to_run = file_path # Default to original file
+            tmp_file_to_delete = None
+
+            # Check if the limit is set and if this file has more test cases than the limit
+            if args.testcase_limit and len(testdata.get("testcases", {})) > args.testcase_limit:
+                print(f"Limiting {relative_path} to first {args.testcase_limit} test cases.", file=sys.stderr)
+                
+                # Get the first N testcase IDs (relies on Python 3.7+ dict insertion order)
+                testcase_ids_to_keep = list(testdata["testcases"].keys())[:args.testcase_limit]
+                
+                # Filter both testcases and expectedResults in the loaded 'testdata' variable
+                testdata["testcases"] = {
+                    k: testdata["testcases"][k] for k in testcase_ids_to_keep
+                }
+                
+                original_expected = testdata.get("expectedResults", {})
+                testdata["expectedResults"] = {
+                    k: original_expected.get(k) 
+                    for k in testcase_ids_to_keep # Only keep expected results for the test cases we are running
+                }
+                
+                # Create a temporary file to pass to kauma
+                try:
+                    with tempfile.NamedTemporaryFile(mode='w', delete=False, suffix=".json", encoding='utf-8') as tmp_f:
+                        json.dump(testdata, tmp_f)
+                        file_path_to_run = Path(tmp_f.name) # Use Path object for Popen
+                        tmp_file_to_delete = file_path_to_run
+                except Exception as e:
+                    print(f"*** Error creating temp file for {relative_path}: {e} ***", file=sys.stderr)
+                    continue # Skip this test file
+
+            # --- End of New Logic ---
+
             testresults[relative_path] = {"successful": [], "failed": [], "missing": []}
 
-            # --- Log which file is being tested (prints to stderr) ---
             print(f"Running test: {relative_path}...", file=sys.stderr)
             
             start = datetime.datetime.now()
-            # This Popen call correctly captures the child process's stdout
-            proc = subprocess.Popen([work_dir / args.kauma, file_path], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-            # Capture both stdout and stderr from the child process
+            # Use file_path_to_run (which is either the original or the temp file)
+            proc = subprocess.Popen([work_dir / args.kauma, file_path_to_run], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             output, stderr_output = proc.communicate()
             end = datetime.datetime.now()
 
-            # Optional: Log if the kauma executable itself printed any errors
+            # --- NEW: Cleanup for temp file ---
+            if tmp_file_to_delete:
+                try:
+                    tmp_file_to_delete.unlink() # Delete the temp file
+                except OSError as e:
+                    print(f"*** Warning: could not delete temp file {tmp_file_to_delete}: {e} ***", file=sys.stderr)
+            # --- End Cleanup ---
+
             if stderr_output:
                 print(f"*** Error from kauma ({relative_path}): {stderr_output.decode(encoding='UTF-8').strip()} ***", file=sys.stderr)
 
+            # The rest of this logic now correctly uses the modified 'testdata' (if it was truncated)
             for line in output.decode(encoding="UTF-8").split("\n"):
                 if not line:
                     continue
@@ -129,6 +165,7 @@ def main():
                     failed_test = True
                     continue
 
+                # Check against the (potentially truncated) expectedResults
                 if result['id'] not in testdata.get('expectedResults', {}):
                     print(f"*** Received unexpected result ID from kauma: {result['id']} ***", file=sys.stderr)
                     failed_test = True
@@ -139,9 +176,10 @@ def main():
                 else:
                     testresults[relative_path]['failed'] += [result['id']]
                     failed_test = True
-                testdata['expectedResults'].pop(result['id'])
+                testdata['expectedResults'].pop(result['id']) # Pop from the (potentially truncated) dict
 
             testresults[relative_path]['timeSeconds'] = f"{(end - start).total_seconds():.3f}"
+            # This loop correctly iterates over the remaining items in the (potentially truncated) dict
             for k in testdata.get('expectedResults', {}):
                 if testdata['expectedResults'][k] is None:
                     testresults[relative_path]['successful'] += [k]
@@ -151,10 +189,9 @@ def main():
     print("--- Test run complete. Generating summary... ---", file=sys.stderr)
 
     if args.filters and not any_matched:
-        # Log warning to stderr
         print(f"Warning: no tests matched the filters {args.filters}", file=sys.stderr)
     elif not testresults:
-        if not (args.filters and not any_matched): # Don't double-print warnings
+        if not (args.filters and not any_matched):
             print("No test files were found or matched the given filters.", file=sys.stderr)
     else:
         rows = []
@@ -168,11 +205,9 @@ def main():
                         "Time Seconds", "Failed (T)", "Missing (T)"]
         widths = [max(len(str(row[i])) for row in [header] + rows) for i in range(len(header))]
 
-        # Print header (to stdout, as before)
         print("\n" + " | ".join(str(header[i]).ljust(widths[i]) for i in range(len(header))))
         print("-+-".join("-" * widths[i] for i in range(len(header))))
 
-        # Print rows (to stdout, as before)
         for row in rows:
             print(" | ".join(str(row[i]).ljust(widths[i]) for i in range(len(row))))
 
