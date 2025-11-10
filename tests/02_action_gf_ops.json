@@ -46,6 +46,14 @@
                 "x": "oAAAAEAAAAAAAAAAAAAAAA==",
                 "poly": "p2"
             }
+        },
+        "moodle_gf_mul_01": {
+            "action": "gf_mul",
+            "arguments": {
+                "a": "QAAAAAAAAAAAAAAAAAAAAA==",
+                "b": "AAAAAAAAAAAAAAAAAAAAAQ==",
+                "poly": "p2"
+            }
         }
     },
     "expectedResults": {
@@ -57,6 +65,7 @@
         "default_gf_inv": { "y": "NSrMarB2n+4IF8VXhrbSoQ==" },
         "default_gf_div": { "q": "KB8FyvjLM0AKY+f8BPNAEQ==" },
         "default_gf_pow": { "y": "Rp4NuH4f6V1sN4t51tkC7Q==" },
-        "default_gf_sqrt": { "y": "vODfOEm+Mm8LfMTfDg/zgw==" }
+        "default_gf_sqrt": { "y": "vODfOEm+Mm8LfMTfDg/zgw==" },
+        "moodle_gf_mul_01": { "y": "gAAAAEAAAAAEAAAAIAAAAA==" }
     }
 }

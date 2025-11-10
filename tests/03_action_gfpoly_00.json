@@ -1,0 +1,389 @@
+{
+  "title": "GfPoly action test cases",
+  "description": "The galois field polynom action examples from the exercise sheet",
+  "testcases": {
+    "default_gfpoly_sort": {
+      "action": "gfpoly_sort",
+      "arguments": {
+        "polys": [
+          [
+            "NeverGonnaGiveYouUpAAA==",
+            "NeverGonnaLetYouDownAA==",
+            "NeverGonnaRunAroundAAA==",
+            "AndDesertYouAAAAAAAAAA=="
+          ],
+          [
+            "WereNoStrangersToLoveA==",
+            "YouKnowTheRulesAAAAAAA==",
+            "AndSoDoIAAAAAAAAAAAAAA=="
+          ],
+          [
+            "NeverGonnaMakeYouCryAA==",
+            "NeverGonnaSayGoodbyeAA==",
+            "NeverGonnaTellALieAAAA==",
+            "AndHurtYouAAAAAAAAAAAA=="
+          ]
+        ]
+      }
+    },
+    "default_gfpoly_monic": {
+      "action": "gfpoly_monic",
+      "arguments": {
+        "A": [
+          "NeverGonnaGiveYouUpAAA==",
+          "NeverGonnaLetYouDownAA==",
+          "NeverGonnaRunAroundAAA==",
+          "AndDesertYouAAAAAAAAAA=="
+        ],
+        "poly": "p1"
+      }
+    },
+    "default_gfpoly_add": {
+      "action": "gfpoly_add",
+      "arguments": {
+        "A": [
+          "NeverGonnaGiveYouUpAAA==",
+          "NeverGonnaLetYouDownAA==",
+          "NeverGonnaRunAroundAAA==",
+          "AndDesertYouAAAAAAAAAA=="
+        ],
+        "B": [
+          "KryptoanalyseAAAAAAAAA==",
+          "DHBWMannheimAAAAAAAAAA=="
+        ],
+        "poly": "p1"
+      }
+    },
+    "default_gfpoly_mul": {
+      "action": "gfpoly_mul",
+      "arguments": {
+        "A": [
+          "JAAAAAAAAAAAAAAAAAAAAA==",
+          "wAAAAAAAAAAAAAAAAAAAAA==",
+          "ACAAAAAAAAAAAAAAAAAAAA=="
+        ],
+        "B": [
+          "0AAAAAAAAAAAAAAAAAAAAA==",
+          "IQAAAAAAAAAAAAAAAAAAAA=="
+        ],
+        "poly": "p1"
+      }
+    },
+    "default_gfpoly_divmod": {
+      "action": "gfpoly_divmod",
+      "arguments": {
+        "A": [
+          "JAAAAAAAAAAAAAAAAAAAAA==",
+          "wAAAAAAAAAAAAAAAAAAAAA==",
+          "ACAAAAAAAAAAAAAAAAAAAA=="
+        ],
+        "B": [
+          "0AAAAAAAAAAAAAAAAAAAAA==",
+          "IQAAAAAAAAAAAAAAAAAAAA=="
+        ],
+        "poly": "p1"
+      }
+    },
+    "default_gfpoly_gcd": {
+      "action": "gfpoly_gcd",
+      "arguments": {
+        "A": [
+          "DNWpXnnY24XecPa7a8vrEA==",
+          "I8uYpCbsiPaVvUznuv1IcA==",
+          "wsbiU432ARWuO93He3vbvA==",
+          "zp0g3o8iNz7Y+8oUxw1vJw==",
+          "J0GekE3uendpN6WUAuJ4AA==",
+          "wACd0e6u1ii4AAAAAAAAAA==",
+          "ACAAAAAAAAAAAAAAAAAAAA=="
+        ],
+        "B": [
+          "I20VjJmlSnRSe88gaDiLRQ==",
+          "0Cw5HxJm/pfybJoQDf7/4w==",
+          "8ByrMMf+vVj5r3YXUNCJ1g==",
+          "rEU/f2UZRXqmZ6V7EPKfBA==",
+          "LfdALhvCrdhhGZWl9l9DSg==",
+          "KSUKhN0n6/DZmHPozd1prw==",
+          "DQrRkuA9Zx279wAAAAAAAA==",
+          "AhCEAAAAAAAAAAAAAAAAAA=="
+        ],
+        "poly": "p1"
+      }
+    },
+    "default_gfpoly_pow": {
+      "action": "gfpoly_pow",
+      "arguments": {
+        "B": [
+          "JAAAAAAAAAAAAAAAAAAAAA==",
+          "wAAAAAAAAAAAAAAAAAAAAA==",
+          "ACAAAAAAAAAAAAAAAAAAAA=="
+        ],
+        "e": 3,
+        "poly": "p1"
+      }
+    },
+    "default_gfpoly_powmod": {
+      "action": "gfpoly_powmod",
+      "arguments": {
+        "B": [
+          "JAAAAAAAAAAAAAAAAAAAAA==",
+          "wAAAAAAAAAAAAAAAAAAAAA==",
+          "ACAAAAAAAAAAAAAAAAAAAA=="
+        ],
+        "e": 1000,
+        "M": [
+          "KryptoanalyseAAAAAAAAA==",
+          "DHBWMannheimAAAAAAAAAA=="
+        ],
+        "poly": "p1"
+      }
+    },
+    "default_gfpoly_diff": {
+      "action": "gfpoly_diff",
+      "arguments": {
+        "F": [
+          "IJustWannaTellYouAAAAA==",
+          "HowImFeelingAAAAAAAAAA==",
+          "GottaMakeYouAAAAAAAAAA==",
+          "UnderstaaaaaAAAAAAAAAA=="
+        ],
+        "poly": "p1"
+      }
+    },
+    "default_gfpoly_sqrt": {
+      "action": "gfpoly_sqrt",
+      "arguments": {
+        "S": [
+          "5TxUxLHO1lHE/rSFquKIAg==",
+          "AAAAAAAAAAAAAAAAAAAAAA==",
+          "0DEUJYdHlmd4X7nzzIdcCA==",
+          "AAAAAAAAAAAAAAAAAAAAAA==",
+          "PKUa1+JHTxHE8y3LbuKIIA==",
+          "AAAAAAAAAAAAAAAAAAAAAA==",
+          "Ds96KiAKKoigKoiKiiKAiA=="
+        ],
+        "poly": "p1"
+      }
+    },
+    "default_gfpoly_factor_sff": {
+      "action": "gfpoly_factor_sff",
+      "arguments": {
+        "F": [
+          "vL77UwAAAAAAAAAAAAAAAA==",
+          "mEHchYAAAAAAAAAAAAAAAA==",
+          "9WJa0MAAAAAAAAAAAAAAAA==",
+          "akHfwWAAAAAAAAAAAAAAAA==",
+          "E12o/QAAAAAAAAAAAAAAAA==",
+          "vKJ/FgAAAAAAAAAAAAAAAA==",
+          "yctWwAAAAAAAAAAAAAAAAA==",
+          "c1BXYAAAAAAAAAAAAAAAAA==",
+          "o0AtAAAAAAAAAAAAAAAAAA==",
+          "AbP2AAAAAAAAAAAAAAAAAA==",
+          "k2YAAAAAAAAAAAAAAAAAAA==",
+          "vBYAAAAAAAAAAAAAAAAAAA==",
+          "dSAAAAAAAAAAAAAAAAAAAA==",
+          "69gAAAAAAAAAAAAAAAAAAA==",
+          "VkAAAAAAAAAAAAAAAAAAAA==",
+          "a4AAAAAAAAAAAAAAAAAAAA==",
+          "gAAAAAAAAAAAAAAAAAAAAA=="
+        ],
+        "poly": "p1"
+      }
+    },
+    "default_gfpoly_factor_ddf": {
+      "action": "gfpoly_factor_ddf",
+      "arguments": {
+        "F": [
+          "tpkgAAAAAAAAAAAAAAAAAA==",
+          "m6MQAAAAAAAAAAAAAAAAAA==",
+          "8roAAAAAAAAAAAAAAAAAAA==",
+          "3dUAAAAAAAAAAAAAAAAAAA==",
+          "FwAAAAAAAAAAAAAAAAAAAA==",
+          "/kAAAAAAAAAAAAAAAAAAAA==",
+          "a4AAAAAAAAAAAAAAAAAAAA==",
+          "gAAAAAAAAAAAAAAAAAAAAA=="
+        ],
+        "poly": "p1"
+      }
+    },
+    "default_gfpoly_factor_edf": {
+      "action": "gfpoly_factor_edf",
+      "arguments": {
+        "F": [
+          "mmAAAAAAAAAAAAAAAAAAAA==",
+          "AbAAAAAAAAAAAAAAAAAAAA==",
+          "zgAAAAAAAAAAAAAAAAAAAA==",
+          "FwAAAAAAAAAAAAAAAAAAAA==",
+          "AAAAAAAAAAAAAAAAAAAAAA==",
+          "wAAAAAAAAAAAAAAAAAAAAA==",
+          "gAAAAAAAAAAAAAAAAAAAAA=="
+        ],
+        "d": 3,
+        "poly": "p1"
+      }
+    }
+  },
+  "expectedResults": {
+    "default_gfpoly_sort": {
+      "sorted": [
+        [
+          "WereNoStrangersToLoveA==",
+          "YouKnowTheRulesAAAAAAA==",
+          "AndSoDoIAAAAAAAAAAAAAA=="
+        ],
+        [
+          "NeverGonnaMakeYouCryAA==",
+          "NeverGonnaSayGoodbyeAA==",
+          "NeverGonnaTellALieAAAA==",
+          "AndHurtYouAAAAAAAAAAAA=="
+        ],
+        [
+          "NeverGonnaGiveYouUpAAA==",
+          "NeverGonnaLetYouDownAA==",
+          "NeverGonnaRunAroundAAA==",
+          "AndDesertYouAAAAAAAAAA=="
+        ]
+      ]
+    },
+    "default_gfpoly_monic": {
+      "A*": [
+        "edY47onJ4MtCENDTHG/sZw==",
+        "oaXjCKnceBIxSavZ9eFT8w==",
+        "1Ial5rAJGOucIdUe3zh5bw==",
+        "gAAAAAAAAAAAAAAAAAAAAA=="
+      ]
+    },
+    "default_gfpoly_add": {
+      "S": [
+        "H1d3GuyA9/0OxeYouUpAAA==",
+        "OZuIncPAGEp4tYouDownAA==",
+        "NeverGonnaRunAroundAAA==",
+        "AndDesertYouAAAAAAAAAA=="
+      ]
+    },
+    "default_gfpoly_mul": {
+      "P": [
+        "MoAAAAAAAAAAAAAAAAAAAA==",
+        "sUgAAAAAAAAAAAAAAAAAAA==",
+        "MbQAAAAAAAAAAAAAAAAAAA==",
+        "AAhAAAAAAAAAAAAAAAAAAA=="
+      ]
+    },
+    "default_gfpoly_divmod": {
+      "Q": [
+        "nAIAgCAIAgCAIAgCAIAgCg==",
+        "m85znOc5znOc5znOc5znOQ=="
+      ],
+      "R": [
+        "lQNA0DQNA0DQNA0DQNA0Dg=="
+      ]
+    },
+    "default_gfpoly_gcd": {
+      "G": [
+        "NeverGonnaMakeYouCryAA==",
+        "NeverGonnaSayGoodbyeAA==",
+        "NeverGonnaTellALieAAAA==",
+        "AndHurtYouAAAAAAAAAAAA==",
+        "gAAAAAAAAAAAAAAAAAAAAA=="
+      ]
+    },
+    "default_gfpoly_pow": {
+      "Z": [
+        "AkkAAAAAAAAAAAAAAAAAAA==",
+        "DDAAAAAAAAAAAAAAAAAAAA==",
+        "LQIIAAAAAAAAAAAAAAAAAA==",
+        "8AAAAAAAAAAAAAAAAAAAAA==",
+        "ACgCQAAAAAAAAAAAAAAAAA==",
+        "AAAMAAAAAAAAAAAAAAAAAA==",
+        "AAAAAgAAAAAAAAAAAAAAAA=="
+      ]
+    },
+    "default_gfpoly_powmod": {
+      "Z": [
+        "oNXl5P8xq2WpUTP92u25zg=="
+      ]
+    },
+    "default_gfpoly_diff": {
+      "F'": [
+        "HowImFeelingAAAAAAAAAA==",
+        "AAAAAAAAAAAAAAAAAAAAAA==",
+        "UnderstaaaaaAAAAAAAAAA=="
+      ]
+    },
+    "default_gfpoly_sqrt": {
+      "R": [
+        "NeverGonnaGiveYouUpAAA==",
+        "NeverGonnaLetYouDownAA==",
+        "NeverGonnaRunAroundAAA==",
+        "AndDesertYouAAAAAAAAAA=="
+      ]
+    },
+    "default_gfpoly_factor_sff": {
+      "factors": [
+        {
+          "factor": [
+            "q4AAAAAAAAAAAAAAAAAAAA==",
+            "gAAAAAAAAAAAAAAAAAAAAA=="
+          ],
+          "exponent": 1
+        },
+        {
+          "factor": [
+            "iwAAAAAAAAAAAAAAAAAAAA==",
+            "CAAAAAAAAAAAAAAAAAAAAA==",
+            "AAAAAAAAAAAAAAAAAAAAAA==",
+            "gAAAAAAAAAAAAAAAAAAAAA=="
+          ],
+          "exponent": 2
+        },
+        {
+          "factor": [
+            "kAAAAAAAAAAAAAAAAAAAAA==",
+            "CAAAAAAAAAAAAAAAAAAAAA==",
+            "wAAAAAAAAAAAAAAAAAAAAA==",
+            "gAAAAAAAAAAAAAAAAAAAAA=="
+          ],
+          "exponent": 3
+        }
+      ]
+    },
+    "default_gfpoly_factor_ddf": {
+      "factors": [
+        {
+          "factor": [
+            "q4AAAAAAAAAAAAAAAAAAAA==",
+            "gAAAAAAAAAAAAAAAAAAAAA=="
+          ],
+          "degree": 1
+        },
+        {
+          "factor": [
+            "mmAAAAAAAAAAAAAAAAAAAA==",
+            "AbAAAAAAAAAAAAAAAAAAAA==",
+            "zgAAAAAAAAAAAAAAAAAAAA==",
+            "FwAAAAAAAAAAAAAAAAAAAA==",
+            "AAAAAAAAAAAAAAAAAAAAAA==",
+            "wAAAAAAAAAAAAAAAAAAAAA==",
+            "gAAAAAAAAAAAAAAAAAAAAA=="
+          ],
+          "degree": 3
+        }
+      ]
+    },
+    "default_gfpoly_factor_edf": {
+      "factors": [
+        [
+          "iwAAAAAAAAAAAAAAAAAAAA==",
+          "CAAAAAAAAAAAAAAAAAAAAA==",
+          "AAAAAAAAAAAAAAAAAAAAAA==",
+          "gAAAAAAAAAAAAAAAAAAAAA=="
+        ],
+        [
+          "kAAAAAAAAAAAAAAAAAAAAA==",
+          "CAAAAAAAAAAAAAAAAAAAAA==",
+          "wAAAAAAAAAAAAAAAAAAAAA==",
+          "gAAAAAAAAAAAAAAAAAAAAA=="
+        ]
+      ]
+    }
+  }
+}
