@@ -95,6 +95,8 @@ def main():
         print(" | ".join(str(header[i]).ljust(widths[i]) for i in range(len(header))))
         print("-+-".join("-" * widths[i] for i in range(len(header))))
 
+        rows.sort() # truly excellent sorting
+
         # Print rows
         for row in rows:
             print(" | ".join(str(row[i]).ljust(widths[i]) for i in range(len(row))))
