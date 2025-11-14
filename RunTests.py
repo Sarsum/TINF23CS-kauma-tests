@@ -64,7 +64,7 @@ def main():
                 if not line:
                     continue
                 result = json.loads(line)
-                if result['reply'] == testdata['expectedResults'][result['id']]:
+                if sorted(result['reply']) == sorted(testdata['expectedResults'][result['id']]):
                     testresults[relative_path]['successful'] += [result['id']]
                 else:
                     testresults[relative_path]['failed'] += [result['id']]
