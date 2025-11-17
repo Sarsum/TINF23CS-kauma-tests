@@ -1,0 +1,33 @@
+{
+    "title": "gfpoly_factor_edf edgecases",
+    "description": "This testcase specifically requires a random polynomial of length 2 and I somehow messed that up and used the degree as length input",
+    "authors": ["Sarsum"],
+    "testcases": {
+        "edge01": {
+            "action": "gfpoly_factor_edf",
+            "arguments": {
+                "F": [
+                    "4Ry4HKU7/ELJGyP79XrSFg==",
+                    "Ke5wrLTKZbKzJU3wwWDjaA==",
+                    "gAAAAAAAAAAAAAAAAAAAAA=="
+                ],
+                "d": 1,
+                "poly": "p1"
+            }
+        }
+    },
+    "expectedResults": {
+        "edge01": {
+            "factors": [
+                [
+                    "Bg1eynlbKljuAq+xEPzEdA==",
+                    "gAAAAAAAAAAAAAAAAAAAAA=="
+                ],
+                [
+                    "L+MuZs2RT+pdJ+JB0ZwnHA==",
+                    "gAAAAAAAAAAAAAAAAAAAAA=="
+                ]
+            ]
+        }
+    }
+}

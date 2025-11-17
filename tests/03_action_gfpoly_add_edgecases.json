@@ -1,0 +1,47 @@
+{
+    "title": "gfpoly_add edgecases",
+    "description": "",
+    "authors": [
+        "Sarsum"
+    ],
+    "testcases": {
+        "edge01": {
+            "action": "gfpoly_add",
+            "arguments": {
+                "A": [
+                    "gAAAAAAAAAAAAAAAAAAAAA=="
+                ],
+                "B": [
+                    "gAAAAAAAAAAAAAAAAAAAAA=="
+                ],
+                "poly": "p1"
+            }
+        },
+        "edge02": {
+            "action": "gfpoly_add",
+            "arguments": {
+                "A": [
+                    "gAAAAAAAAAAAAAAAAAAAAA==",
+                    "gAAAAAAAAAAAAAAAAAAAAA=="
+                ],
+                "B": [
+                    "gAAAAAAAAAAAAAAAAAAAAA==",
+                    "gAAAAAAAAAAAAAAAAAAAAA=="
+                ],
+                "poly": "p1"
+            }
+        }
+    },
+    "expectedResults": {
+        "edge01": {
+            "S": [
+                "AAAAAAAAAAAAAAAAAAAAAA=="
+            ]
+        },
+        "edge02": {
+            "S": [
+                "AAAAAAAAAAAAAAAAAAAAAA=="
+            ]
+        }
+    }
+}
