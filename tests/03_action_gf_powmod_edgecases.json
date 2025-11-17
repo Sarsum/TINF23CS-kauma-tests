@@ -1,0 +1,26 @@
+{
+    "title": "Edgecase with exp 0 and modulus 1",
+    "description": "Exp-loop is not being run due to exp being run but modulus needs to be run at least once since being one",
+    "testcases": {
+        "edge": {
+            "action": "gfpoly_powmod",
+            "arguments": {
+                "B": [
+                    "gAAAAAAAAAAAAAAAAAAAAA=="
+                ],
+                "M": [
+                    "gAAAAAAAAAAAAAAAAAAAAA=="
+                ],
+                "e": 0,
+                "poly": "p1"
+            }
+        }
+    },
+    "expectedResults": {
+        "edge": {
+            "Z": [
+                "AAAAAAAAAAAAAAAAAAAAAA=="
+            ]
+        }
+    }
+}
