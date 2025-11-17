@@ -1,0 +1,146 @@
+{
+    "title": "GCM crack tests",
+    "description": "Automatically generated GCM crack tests",
+    "authors": [],
+    "requiredSidecars": [],
+    "testcases": {
+        "edge01": {
+            "action": "gcm_crack",
+            "arguments": {
+                "nonce": "vE2Hlh370mpzoqN6",
+                "m1": {
+                    "ciphertext": "",
+                    "associated_data": "",
+                    "tag": "sJPLGAq0zVeeOOqUL+7LKg=="
+                },
+                "m2": {
+                    "ciphertext": "QcPLMuWSEfYjS3h77hOCGuFcEbx5fQKUw6l2QwqIMAU6kDjkauoADhqrQgxgsz+Cim6TNk7gY1fevljTRPuv3w==",
+                    "associated_data": "FQwWbo/+r2r8vyfUJvS0cCuTplWMTxEEGBqpOykaj/Y=",
+                    "tag": "pE3wmv6CiqsBidkrEmrcCA=="
+                },
+                "m3": {
+                    "ciphertext": "/3nFpRDjalWYyIEBqZ/EDA==",
+                    "associated_data": "g/hJKd0XZnEF7gtDs8/na5A44pNlpfYw0uOuZuF0iU9Zw83DWc0eaRR4spLf6X0Rs8NjpU+sSVUPIJ9VHjAkDg==",
+                    "tag": "fKwJSZPnJWJCPNIG9vxAkA=="
+                },
+                "forgery": {
+                    "ciphertext": "/22Y3hPoUs3EI9s2loSalVMRMNf5+hLEd4923M3xQ3w=",
+                    "associated_data": "5s1qvWJi8OXo5znq9nZGDyuG5CZ9a8l3/frzHKTN5KU="
+                },
+                "poly": "p1",
+                "debug": {
+                    "aes_key": "kodcpP1vL0Jq0uUaKCeH3Q=="
+                }
+            }
+        },
+        "edge02": {
+            "action": "gcm_crack",
+            "arguments": {
+                "nonce": "ougFtZUNhGPz/oQ3",
+                "m1": {
+                    "ciphertext": "fXPhuXXHWK4Qq2RcUMV/dYJuKr1KjL7ToKVd18y1sQp1kGUyBVIGJjwhEJ+Tw4k0",
+                    "associated_data": "",
+                    "tag": "1IaDPAYRicRolRCHTYcHAg=="
+                },
+                "m2": {
+                    "ciphertext": "5N9Sg10Ri5H59LlNBjZtPQF8VGk8ROD04LPHyXiuvQLgZausLDyvmI49W2spm+0c",
+                    "associated_data": "KUmwjPUT/kF7WDgLPcqbUsR2hLCwBan2Nzxz478hu4M=",
+                    "tag": "XLwjHlh6WFvU0gNr/1ilAg=="
+                },
+                "m3": {
+                    "ciphertext": "6OJXxNG2+jQSl7pxI5sin65h/rprDJaBBY5jzjZoiq2N4teFoa4UAbeHnDGJ0yWq",
+                    "associated_data": "",
+                    "tag": "YFXokBkwqUXKO+ygBwKWzQ=="
+                },
+                "forgery": {
+                    "ciphertext": "",
+                    "associated_data": ""
+                },
+                "poly": "p1",
+                "debug": {
+                    "aes_key": "kBbr+y0x7IDuV91gTex8Ig=="
+                }
+            }
+        },
+        "edge03": {
+            "action": "gcm_crack",
+            "arguments": {
+                "nonce": "S4FN2S8ynAjDKbjJ",
+                "m1": {
+                    "ciphertext": "h0rONrLrNh4XWGllPsTt3Q==",
+                    "associated_data": "31ILXzd5gDGESlKubgwM9O0X4Wp0rvtwZc9GFlcvmJRJsZ3ij+EuGpTkD5NqEG2OQ+RqdE7JH+Tw0+bbOFNhGg==",
+                    "tag": "adzJRoaI5/xdFVQVJEoxXw=="
+                },
+                "m2": {
+                    "ciphertext": "",
+                    "associated_data": "",
+                    "tag": "lQP6JkWxhmk/+bSvxUP33w=="
+                },
+                "m3": {
+                    "ciphertext": "LnlDoanTvS40c6obfkPV9g==",
+                    "associated_data": "",
+                    "tag": "ezkwHE2pRLJG0BrcxOCcow=="
+                },
+                "forgery": {
+                    "ciphertext": "FswoZ1l9XCsyxPR7lp5Plb5OS7EnPGQQ7HqkIe89elMBVJDa6wc6qSF5oduG87NkxzT3tHx3lxEJF8vDyy1YEQ==",
+                    "associated_data": ""
+                },
+                "poly": "p1",
+                "debug": {
+                    "aes_key": "Sm/uBKddAPQK5eX4JjaKAA=="
+                }
+            }
+        },
+        "edge04": {
+            "action": "gcm_crack",
+            "arguments": {
+                "nonce": "9/fyjO84u88JZUrP",
+                "m1": {
+                    "ciphertext": "8aKKm9/keEKvf5ZeEf8unA==",
+                    "associated_data": "C7sYEhIXk1tO/IecSNHuR03E3zaGXx8HvGrKP1mkqB95Qod5Rwm8wKFYBM7Sui6S",
+                    "tag": "TrQg3Se5H0w9hAXRDoSd+A=="
+                },
+                "m2": {
+                    "ciphertext": "W3D/S9N6xO7PHLd/XJ0RKQ==",
+                    "associated_data": "eYDugdIxFRnxJtfQV6koZubs/TP+PUs3qhBbiJM5enJS+BpPhCy2KqOpd5gfY3wm",
+                    "tag": "vzbVNmiS+wxJ1CiVN9C9bg=="
+                },
+                "m3": {
+                    "ciphertext": "",
+                    "associated_data": "",
+                    "tag": "nu0e31A3e4SYFZnXHQXcjg=="
+                },
+                "forgery": {
+                    "ciphertext": "vZ/iEZqxmK9kpXQsqTuTjjeXN/oPrpWFw+Wu0pcgi7g=",
+                    "associated_data": "oQ/BvPUMucPsrMdxQ8SOKjumZVxAyG5J2zlQ+dulT/Db7KYNz9LluqZffsTseS4c"
+                },
+                "poly": "p1",
+                "debug": {
+                    "aes_key": "1zslLLSpB3SdTl37ynHzbg=="
+                }
+            }
+        }
+    },
+    "expectedResults": {
+        "edge01": {
+            "tag": "lmamLE4/LGJHRY7hjN0HMg==",
+            "H": "ntC1Y5HNrG7Z6ahLfIpDTA==",
+            "mask": "sJPLGAq0zVeeOOqUL+7LKg=="
+        },
+        "edge02": {
+            "tag": "hzjrxJxTAKX9rGFudwA7Kw==",
+            "H": "2ef/xvr6fa/zWWNaKca6YA==",
+            "mask": "hzjrxJxTAKX9rGFudwA7Kw=="
+        },
+        "edge03": {
+            "tag": "/eRrkniJ/4B1fsEND5PAHw==",
+            "H": "B5KsKpgRA2NwwNvYJUyfuw==",
+            "mask": "lQP6JkWxhmk/+bSvxUP33w=="
+        },
+        "edge04": {
+            "tag": "87rFUIRFKkrwkJsufERv+Q==",
+            "H": "gPOIfwpSPPQQXxH7PNbM0w==",
+            "mask": "nu0e31A3e4SYFZnXHQXcjg=="
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "title": "gfpoly_sort edgecases",
+    "description": "",
+    "authors": ["Sarsum"],
+    "testcases": {
+        "edge01": {
+            "action": "gfpoly_sort",
+            "arguments": {
+                "polys": []
+            }
+        }
+    },
+    "expectedResults": {
+        "edge01": {
+            "sorted": []
+        }
+    }
+}
