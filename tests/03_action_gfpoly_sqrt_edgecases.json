@@ -1,0 +1,62 @@
+{
+  "title": "gfpoly_sqrt edgecases",
+  "description": "",
+  "authors": ["tametsi"],
+  "testcases": {
+    "8Z7CJ3uZ2J5j18AsqJcgl": {
+      "action": "gfpoly_sqrt",
+      "arguments": {
+        "S": [
+          "AAAAAAAAAAAAAAAAAAAAAA==",
+          "AAAAAAAAAAAAAAAAAAAAAA==",
+          "AAAAAAAAAAAAAAAAAAAAAA==",
+          "AAAAAAAAAAAAAAAAAAAAAA==",
+          "PKUa1+JHTxHE8y3LbuKIIA==",
+          "AAAAAAAAAAAAAAAAAAAAAA==",
+          "Ds96KiAKKoigKoiKiiKAiA=="
+        ],
+        "poly": "p1"
+      }
+    },
+    "OIOBRatHMZRz9aqqavzg2": {
+      "action": "gfpoly_sqrt",
+      "arguments": {
+        "S": ["5TxUxLHO1lHE/rSFquKIAg=="],
+        "poly": "p1"
+      }
+    },
+    "pzcsn7nCQrraNX68c14oc": {
+      "action": "gfpoly_sqrt",
+      "arguments": {
+        "S": ["AAAAAAAAAAAAAAAAAAAAAA=="],
+        "poly": "p1"
+      }
+    },
+    "yJimdti2nIAHEnyxYyrF0": {
+      "action": "gfpoly_sqrt",
+      "arguments": {
+        "S": ["gAAAAAAAAAAAAAAAAAAAAA=="],
+        "poly": "p1"
+      }
+    }
+  },
+  "expectedResults": {
+    "8Z7CJ3uZ2J5j18AsqJcgl": {
+      "R": [
+        "AAAAAAAAAAAAAAAAAAAAAA==",
+        "AAAAAAAAAAAAAAAAAAAAAA==",
+        "NeverGonnaRunAroundAAA==",
+        "AndDesertYouAAAAAAAAAA=="
+      ]
+    },
+    "OIOBRatHMZRz9aqqavzg2": {
+      "R": ["NeverGonnaGiveYouUpAAA=="]
+    },
+    "pzcsn7nCQrraNX68c14oc": {
+      "R": ["AAAAAAAAAAAAAAAAAAAAAA=="]
+    },
+    "yJimdti2nIAHEnyxYyrF0": {
+      "R": ["gAAAAAAAAAAAAAAAAAAAAA=="]
+    }
+  }
+}
