@@ -1,26 +1,90 @@
 {
-    "title": "Edgecase with exp 0 and modulus 1",
-    "description": "Exp-loop is not being run due to exp being run but modulus needs to be run at least once since being one",
-    "testcases": {
-        "edge": {
-            "action": "gfpoly_powmod",
-            "arguments": {
-                "B": [
-                    "gAAAAAAAAAAAAAAAAAAAAA=="
-                ],
-                "M": [
-                    "gAAAAAAAAAAAAAAAAAAAAA=="
-                ],
-                "e": 0,
-                "poly": "p1"
-            }
-        }
+  "title": "gfpoly powmod edgecases",
+  "description": "",
+  "testcases": {
+    "PkAm5vSJQguTAaiYRPfFX": {
+      "action": "gfpoly_powmod",
+      "arguments": {
+        "B": [
+          "JAAAAAAAAAAAAAAAAAAAAA==",
+          "wAAAAAAAAAAAAAAAAAAAAA==",
+          "ACAAAAAAAAAAAAAAAAAAAA=="
+        ],
+        "M": ["KryptoanalyseAAAAAAAAA==", "DHBWMannheimAAAAAAAAAA=="],
+        "e": 0,
+        "poly": "p1"
+      }
     },
-    "expectedResults": {
-        "edge": {
-            "Z": [
-                "AAAAAAAAAAAAAAAAAAAAAA=="
-            ]
-        }
+    "v-oGqbEKgBZScb4-JLNqH": {
+      "action": "gfpoly_powmod",
+      "arguments": {
+        "B": ["AAAAAAAAAAAAAAAAAAAAAA=="],
+        "M": ["KryptoanalyseAAAAAAAAA==", "DHBWMannheimAAAAAAAAAA=="],
+        "e": 1,
+        "poly": "p1"
+      }
+    },
+    "99tzdXPwo6QQPIVpe2WhU": {
+      "action": "gfpoly_powmod",
+      "arguments": {
+        "B": ["AAAAAAAAAAAAAAAAAAAAAA=="],
+        "M": ["KryptoanalyseAAAAAAAAA==", "DHBWMannheimAAAAAAAAAA=="],
+        "e": "0xffffffffffffffffffffffffffffffff",
+        "poly": "p1"
+      }
+    },
+    "Pe2IzE0zi8bLp4nmwGaiV": {
+      "action": "gfpoly_powmod",
+      "arguments": {
+        "B": [
+          "JAAAAAAAAAAAAAAAAAAAAA==",
+          "wAAAAAAAAAAAAAAAAAAAAA==",
+          "ACAAAAAAAAAAAAAAAAAAAA=="
+        ],
+        "M": ["0AAAAAAAAAAAAAAAAAAAAA==", "IQAAAAAAAAAAAAAAAAAAAA=="],
+        "e": "0x100000000000000000000000000000000",
+        "poly": "p1"
+      }
+    },
+    "u8JFvAT5sdlP4w8-8JGWQ": {
+      "action": "gfpoly_powmod",
+      "arguments": {
+        "B": [
+          "JAAAAAAAAAAAAAAAAAAAAA==",
+          "wAAAAAAAAAAAAAAAAAAAAA==",
+          "ACAAAAAAAAAAAAAAAAAAAA=="
+        ],
+        "M": ["KryptoanalyseAAAAAAAAA==", "DHBWMannheimAAAAAAAAAA=="],
+        "e": "0x1000000000000000000000000000003e7",
+        "poly": "p1"
+      }
+    },
+    "h5gzsjqtKVtU1aTifRi1Z": {
+      "action": "gfpoly_powmod",
+      "arguments": {
+        "B": ["gAAAAAAAAAAAAAAAAAAAAA=="],
+        "M": ["gAAAAAAAAAAAAAAAAAAAAA=="],
+        "e": 1,
+        "poly": "p1"
+      }
+    },
+    "dMCKKmn0Mwsd2VLthakj-": {
+      "action": "gfpoly_powmod",
+      "arguments": {
+        "B": ["gAAAAAAAAAAAAAAAAAAAAA=="],
+        "M": ["gAAAAAAAAAAAAAAAAAAAAA=="],
+        "e": 0,
+        "poly": "p1"
+      }
     }
+  },
+  "expectedResults": {
+    "PkAm5vSJQguTAaiYRPfFX": { "Z": ["gAAAAAAAAAAAAAAAAAAAAA=="] },
+    "v-oGqbEKgBZScb4-JLNqH": { "Z": ["AAAAAAAAAAAAAAAAAAAAAA=="] },
+    "99tzdXPwo6QQPIVpe2WhU": { "Z": ["AAAAAAAAAAAAAAAAAAAAAA=="] },
+    "Pe2IzE0zi8bLp4nmwGaiV": { "Z": ["lQNA0DQNA0DQNA0DQNA0Dg=="] },
+    "u8JFvAT5sdlP4w8-8JGWQ": { "Z": ["oNXl5P8xq2WpUTP92u25zg=="] },
+    "h5gzsjqtKVtU1aTifRi1Z": { "Z": ["AAAAAAAAAAAAAAAAAAAAAA=="] },
+    "dMCKKmn0Mwsd2VLthakj-": { "Z": ["AAAAAAAAAAAAAAAAAAAAAA=="] }
+  }
 }
