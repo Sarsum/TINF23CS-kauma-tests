@@ -1,0 +1,38 @@
+{
+    "title": "rsa_factor action edgecases",
+    "description": "01: one modul shares both factors with other moduli (and contains one random modul)",
+    "authors": [
+        "Sarsum"
+    ],
+    "testcases": {
+        "shared_factors_01": {
+            "action": "rsa_factor",
+            "arguments": {
+                "moduli": [
+                    323,
+                    15,
+                    391,
+                    667
+                ]
+            }
+        }
+    },
+    "expectedResults": {
+        "shared_factors_01": {
+            "factored_moduli": [
+                [
+                    17,
+                    19
+                ],
+                [
+                    17,
+                    23
+                ],
+                [
+                    23,
+                    29
+                ]
+            ]
+        }
+    }
+}
