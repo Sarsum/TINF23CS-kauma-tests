@@ -1,0 +1,31 @@
+{
+    "title": "rsa_factor testcase from exercise sheet",
+    "description": "The only default testcase",
+    "testcases": {
+        "default": {
+            "action": "rsa_factor",
+            "arguments": {
+                "moduli": [
+                    15,
+                    221,
+                    77,
+                    1313
+                ]
+            }
+        }
+    },
+    "expectedResults": {
+        "default": {
+            "factored_moduli": [
+                [
+                    13,
+                    17
+                ],
+                [
+                    13,
+                    101
+                ]
+            ]
+        }
+    }
+}
