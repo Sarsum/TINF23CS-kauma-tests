@@ -1,0 +1,56 @@
+{
+    "title": "rsa_factor large testcase from generator",
+    "description": "small synthetic testcase with shared primes for batch GCD",
+    "authors": ["Sarsum"],
+    "testcases": {
+        "001": {
+            "action": "rsa_factor",
+            "arguments": {
+                "moduli": [
+                    147406291,
+                    98834707,
+                    150128791,
+                    225454147,
+                    135775051,
+                    179848771,
+                    82203497,
+                    231469471,
+                    123120709,
+                    111769597,
+                    184279741,
+                    158051077,
+                    151045793,
+                    162513569,
+                    146871607,
+                    101685097,
+                    127978259,
+                    124508849,
+                    152167487,
+                    125642977
+                ]
+            }
+        }
+    },
+    "expectedResults": {
+        "001": {
+            "factored_moduli": [
+                [
+                    9649,
+                    10243
+                ],
+                [
+                    9649,
+                    15559
+                ],
+                [
+                    10009,
+                    12301
+                ],
+                [
+                    10009,
+                    12553
+                ]
+            ]
+        }
+    }
+}
