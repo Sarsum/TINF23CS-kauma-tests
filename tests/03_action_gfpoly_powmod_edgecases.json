@@ -76,6 +76,19 @@
         "e": 0,
         "poly": "p1"
       }
+    },
+    "expont_zero_B_nonzero": {
+      "action": "gfpoly_powmod",
+      "arguments": {
+        "B": [
+          "ACAAAAAAAAAAAAAAAAAAAA=="
+        ],
+        "e": 0,
+        "M": [
+          "KryptoanalyseAAAAAAAAA=="
+        ],
+        "poly": "p1"
+      }
     }
   },
   "expectedResults": {
@@ -85,6 +98,7 @@
     "Pe2IzE0zi8bLp4nmwGaiV": { "Z": ["lQNA0DQNA0DQNA0DQNA0Dg=="] },
     "u8JFvAT5sdlP4w8-8JGWQ": { "Z": ["oNXl5P8xq2WpUTP92u25zg=="] },
     "h5gzsjqtKVtU1aTifRi1Z": { "Z": ["AAAAAAAAAAAAAAAAAAAAAA=="] },
-    "dMCKKmn0Mwsd2VLthakj-": { "Z": ["AAAAAAAAAAAAAAAAAAAAAA=="] }
+    "dMCKKmn0Mwsd2VLthakj-": { "Z": ["AAAAAAAAAAAAAAAAAAAAAA=="] },
+    "expont_zero_B_nonzero": { "Z": ["AAAAAAAAAAAAAAAAAAAAAA=="] }
   }
 }
