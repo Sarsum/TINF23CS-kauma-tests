@@ -1,0 +1,92 @@
+{
+    "title": "Action gfpoly_factor_ddf testcase",
+    "description": "random F values have been used",
+    "authors": ["halotsch"],
+    "testcases": {
+    "case0": {
+      "action": "gfpoly_factor_ddf",
+      "arguments": {
+        "F": [
+          "tpkgAAAAAAAAAAAAAAAAAA==",
+          "m6MQAAAAAAAAAAAAAAAAAA==",
+          "8roAAAAAAAAAAAAAAAAAAA==",
+          "3dUAAAAAAAAAAAAAAAAAAA==",
+          "FwAAAAAAAAAAAAAAAAAAAA==",
+          "/kAAAAAAAAAAAAAAAAAAAA==",
+          "a4AAAAAAAAAAAAAAAAAAAA==",
+          "gAAAAAAAAAAAAAAAAAAAAA=="
+        ],
+        "poly": "p1"
+      }
+    },
+    "case1": {
+      "action": "gfpoly_factor_ddf",
+      "arguments": {
+        "F": [
+          "AQAAAAAAAAAAAAAAAAAAAA==",
+          "gAAAAAAAAAAAAAAAAAAAAA=="
+        ],
+        "poly": "p1"
+      }
+    },
+    "case2": {
+      "action": "gfpoly_factor_ddf",
+      "arguments": {
+        "F": [
+          "97bbbbbbbbbbbbbbbbbbbQ==",
+          "LW2222222222222222222w==",
+          "gAAAAAAAAAAAAAAAAAAAAA=="
+        ],
+        "poly": "p1"
+      }
+    }
+  },
+  "expectedResults": {
+    "case0": {
+      "factors": [
+                {
+          "factor": [
+            "q4AAAAAAAAAAAAAAAAAAAA==",
+            "gAAAAAAAAAAAAAAAAAAAAA=="
+          ],
+          "degree": 1
+        },
+        {
+          "factor": [
+            "mmAAAAAAAAAAAAAAAAAAAA==",
+            "AbAAAAAAAAAAAAAAAAAAAA==",
+            "zgAAAAAAAAAAAAAAAAAAAA==",
+            "FwAAAAAAAAAAAAAAAAAAAA==",
+            "AAAAAAAAAAAAAAAAAAAAAA==",
+            "wAAAAAAAAAAAAAAAAAAAAA==",
+            "gAAAAAAAAAAAAAAAAAAAAA=="
+          ],
+          "degree": 3
+        }
+      ]
+    },
+    "case1": {
+      "factors": [
+        {
+          "factor": [
+            "AQAAAAAAAAAAAAAAAAAAAA==",
+            "gAAAAAAAAAAAAAAAAAAAAA=="
+          ],
+          "degree": 1
+        }
+      ]
+    },
+    "case2": {
+      "factors": [
+        {
+          "factor": [
+            "97bbbbbbbbbbbbbbbbbbbQ==",
+            "LW2222222222222222222w==",
+            "gAAAAAAAAAAAAAAAAAAAAA=="
+          ],
+          "degree": 1
+        }
+      ]
+    }
+  }
+}
