@@ -1,6 +1,6 @@
 {
     "title": "rsa_factor action edgecases",
-    "description": "01: one modul shares both factors with other moduli (and contains one random modul)",
+    "description": "01: one modul shares both factors with other moduli (and contains one random modul); 02: moduli (6) which shares both factors (2, 3) with moduli (10, 21) with again have both two shared factors (2,5),(3,7) with additional factors; 03: circular shared factors",
     "authors": [
         "Sarsum"
     ],
@@ -13,6 +13,28 @@
                     15,
                     391,
                     667
+                ]
+            }
+        },
+        "shared_factors_02": {
+            "action": "rsa_factor",
+            "arguments": {
+                "moduli": [
+                    6,
+                    10,
+                    21,
+                    77,
+                    65
+                ]
+            }
+        },
+        "shared_factors_03": {
+            "action": "rsa_factor",
+            "arguments": {
+                "moduli": [
+                    6,
+                    10,
+                    15
                 ]
             }
         }
@@ -31,6 +53,46 @@
                 [
                     23,
                     29
+                ]
+            ]
+        },
+        "shared_factors_02": {
+            "factored_moduli": [
+                [
+                    2,
+                    3
+                ],
+                [
+                    2,
+                    5
+                ],
+                [
+                    3,
+                    7
+                ],
+                [
+                    5,
+                    13
+                ],
+                [
+                    7,
+                    11
+                ]
+            ]
+        },
+        "shared_factors_03": {
+            "factored_moduli": [
+                [
+                    2,
+                    3
+                ],
+                [
+                    2,
+                    5
+                ],
+                [
+                    3,
+                    5
                 ]
             ]
         }
