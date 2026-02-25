@@ -2,6 +2,9 @@
   "title": "Some padding oracle cases",
   "description": "Padding oracle test cases running on a hosted padding oracle server",
   "authors": ["melo-afk", "niri81"],
+  "requiredSidecars": [
+    "remote-padding-oracle-server"
+  ],
   "testcases": {
     "case9": {
       "action": "padding_oracle",
